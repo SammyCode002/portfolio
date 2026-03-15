@@ -9,6 +9,7 @@ const projects = [
     primaryLink: { url: 'https://github.com/SammyCode002/maui-lfmc', label: 'View on GitHub', type: 'github' },
     accentColor: '#00d4d4',
     bgGradient: 'linear-gradient(135deg, rgba(0,212,212,0.12) 0%, rgba(5,12,12,1) 50%, rgba(20,184,166,0.06) 100%)',
+    preview: '/maui_study_area.png',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
         <circle cx="24" cy="24" r="18" stroke="#00d4d4" strokeWidth="1" />
@@ -102,9 +103,28 @@ export default function Projects() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="glass-card rounded-2xl p-6 flex flex-col group cursor-default"
+              className="glass-card rounded-2xl overflow-hidden flex flex-col group cursor-default"
               style={{ borderTop: `1px solid ${project.accentColor}22` }}
             >
+              {/* Preview image (if present) */}
+              {project.preview && (
+                <div className="relative w-full h-40 overflow-hidden">
+                  <img
+                    src={project.preview}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#091414]" />
+                  <span
+                    className="absolute top-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded-full border"
+                    style={{ color: project.accentColor, borderColor: `${project.accentColor}44`, background: 'rgba(5,12,12,0.7)' }}
+                  >
+                    NASA Harvest
+                  </span>
+                </div>
+              )}
+
+              <div className="p-6 flex flex-col flex-1">
               {/* Top row: folder icon + link icon */}
               <div className="flex items-center justify-between mb-6">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8" style={{ color: project.accentColor }}>
@@ -151,6 +171,7 @@ export default function Projects() {
                     {tag}
                   </span>
                 ))}
+              </div>
               </div>
             </article>
           ))}
