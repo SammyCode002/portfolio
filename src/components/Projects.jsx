@@ -6,7 +6,8 @@ const projects = [
     description: 'NASA Harvest internship generating monthly Live Fuel Moisture Content maps for Maui County using the Galileo foundation model. Zero-shot transfer from CONUS training data to predict wildfire risk leading up to the 2023 Lahaina fire.',
     tags: ['Python', 'PyTorch', 'Google Earth Engine', 'Remote Sensing', 'GIS'],
     githubUrl: 'https://github.com/SammyCode002/maui-lfmc',
-    primaryLink: { url: 'https://github.com/SammyCode002/maui-lfmc', label: 'View on GitHub', type: 'github' },
+    primaryLink: { url: 'https://maui-lfmc-web.vercel.app', label: 'Live Map', type: 'map' },
+    secondaryLink: { url: 'https://github.com/SammyCode002/maui-lfmc', label: 'View on GitHub', type: 'github' },
     accentColor: '#00d4d4',
     bgGradient: 'linear-gradient(135deg, rgba(0,212,212,0.12) 0%, rgba(5,12,12,1) 50%, rgba(20,184,166,0.06) 100%)',
     preview: '/maui_study_area.png',
@@ -121,32 +122,64 @@ export default function Projects() {
                   >
                     NASA Harvest
                   </span>
+                  {project.primaryLink?.type === 'map' && (
+                    <span className="absolute top-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded-full border border-green-500/40 text-green-400 bg-[rgba(5,12,12,0.7)] flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
+                      Live
+                    </span>
+                  )}
                 </div>
               )}
 
               <div className="p-6 flex flex-col flex-1">
-              {/* Top row: folder icon + link icon */}
+              {/* Top row: folder icon + link icons */}
               <div className="flex items-center justify-between mb-6">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8" style={{ color: project.accentColor }}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
                 </svg>
-                <a
-                  href={project.primaryLink.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={project.primaryLink.label}
-                  className="text-[#4a6e6e] hover:text-[#00d4d4] transition-colors no-underline"
-                >
-                  {project.primaryLink.type === 'github' ? (
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-5 h-5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                    </svg>
+                <div className="flex items-center gap-3">
+                  {/* Secondary link (GitHub) */}
+                  {project.secondaryLink && (
+                    <a
+                      href={project.secondaryLink.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={project.secondaryLink.label}
+                      className="text-[#4a6e6e] hover:text-[#00d4d4] transition-colors no-underline"
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </a>
                   )}
-                </a>
+                  {/* Primary link */}
+                  <a
+                    href={project.primaryLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={project.primaryLink.label}
+                    className="transition-colors no-underline"
+                    style={{ color: project.primaryLink.type === 'map' ? project.accentColor : '#4a6e6e' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = project.accentColor}
+                    onMouseLeave={(e) => e.currentTarget.style.color = project.primaryLink.type === 'map' ? project.accentColor : '#4a6e6e'}
+                  >
+                    {project.primaryLink.type === 'github' ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    ) : project.primaryLink.type === 'map' ? (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-5 h-5">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+                      </svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>
+                    )}
+                  </a>
+                </div>
               </div>
 
               {/* Title */}
