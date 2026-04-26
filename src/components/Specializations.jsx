@@ -1,27 +1,14 @@
 import { useScrollFade } from '../hooks/useScrollFade'
 
-const skillGroups = [
-  {
-    label: 'Languages',
-    color: '#00d4d4',
-    skills: ['Python', 'JavaScript', 'React', 'Bash', 'MATLAB'],
-  },
-  {
-    label: 'Geospatial',
-    color: '#14b8a6',
-    skills: ['ArcGIS Pro', 'Google Earth Engine', 'Remote Sensing', 'QGIS'],
-  },
-  {
-    label: 'ML / AI',
-    color: '#06b6d4',
-    skills: ['PyTorch', 'scikit-learn', 'Galileo Foundation Model'],
-  },
-  {
-    label: 'Infrastructure',
-    color: '#2dd4bf',
-    skills: ['HPC / Slurm', 'Jamf MDM', 'Linux', 'Git'],
-  },
+const skills = [
+  'Python', 'JavaScript', 'React', 'Node.js', 'Bash', 'MATLAB', 'C++',
+  'HTML5', 'CSS3', 'Tailwind CSS', 'Flask',
+  'PyTorch', 'scikit-learn', 'MongoDB', 'SQL', 'Galileo Foundation Model',
+  'ArcGIS Pro', 'ArcGIS Online', 'Google Earth Engine', 'Remote Sensing', 'QGIS',
+  'Kali Linux', 'Wireshark', 'Nmap',
+  'HPC / Slurm', 'Jamf MDM', 'Linux', 'Git',
 ]
+const accent = '#00d4d4'
 
 export default function Specializations() {
   const headerRef = useScrollFade(0)
@@ -58,7 +45,7 @@ export default function Specializations() {
           <p className="text-[#b0cece] text-lg leading-relaxed mb-6">
             I am a <span className="text-[#e8f4f4] font-semibold">Computer Science</span> student at{' '}
             <span className="text-[#00d4d4] font-semibold">Oregon State University</span>, currently working as a{' '}
-            <span className="text-[#e8f4f4] font-semibold">Data Processing User Support Technician</span> at the{' '}
+            <span className="text-[#e8f4f4] font-semibold">IT Specialist</span> at the{' '}
             <span className="text-[#00d4d4] font-semibold">Hawaii State Department of Education</span>.
             My background spans cybersecurity, GIS, research computing, and IT.
           </p>
@@ -72,42 +59,38 @@ export default function Specializations() {
         </div>
 
         {/* Skills */}
-        <div ref={skillsRef} className="space-y-6 mb-12">
-          {skillGroups.map((group) => (
-            <div key={group.label}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: group.color }} />
-                <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: group.color }}>
-                  {group.label}
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
-                    style={{
-                      background: `${group.color}0d`,
-                      border: `1px solid ${group.color}25`,
-                      color: '#b0cece',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = `${group.color}60`
-                      e.currentTarget.style.color = group.color
-                      e.currentTarget.style.background = `${group.color}18`
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = `${group.color}25`
-                      e.currentTarget.style.color = '#b0cece'
-                      e.currentTarget.style.background = `${group.color}0d`
-                    }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div ref={skillsRef} className="mb-12">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: accent }}>
+              Tech Stack
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
+                style={{
+                  background: `${accent}0d`,
+                  border: `1px solid ${accent}25`,
+                  color: '#b0cece',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = `${accent}60`
+                  e.currentTarget.style.color = accent
+                  e.currentTarget.style.background = `${accent}18`
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = `${accent}25`
+                  e.currentTarget.style.color = '#b0cece'
+                  e.currentTarget.style.background = `${accent}0d`
+                }}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Personal */}
