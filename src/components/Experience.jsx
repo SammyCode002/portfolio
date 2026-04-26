@@ -3,7 +3,7 @@ import { useScrollFade } from '../hooks/useScrollFade'
 const timeline = [
   {
     type: 'work',
-    title: 'Data Processing User Support Technician',
+    title: 'IT Specialist',
     org: 'Hawaiʻi State Department of Education',
     period: 'Jan 2026 - Present',
     location: 'Pukalani, HI · On-site',
