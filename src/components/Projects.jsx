@@ -56,6 +56,21 @@ const projects = [
       </svg>
     ),
   },
+  {
+    title: 'NASA Harvest',
+    description: 'New NASA Harvest project under the Maui Strong Fellowship (May–Nov 2026). Coming Soon!',
+    tags: ['Coming Soon'],
+    githubUrl: null,
+    primaryLink: { url: '#', label: 'Coming Soon', type: 'soon' },
+    accentColor: '#a855f7',
+    bgGradient: 'linear-gradient(135deg, rgba(168,85,247,0.12) 0%, rgba(5,12,12,1) 50%, rgba(137,87,229,0.06) 100%)',
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
+        <circle cx="24" cy="24" r="18" stroke="#a855f7" strokeWidth="1" />
+        <path d="M24 14 L24 24 L32 28" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ]
 
 export default function Projects() {
