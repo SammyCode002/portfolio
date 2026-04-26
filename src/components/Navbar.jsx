@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
+  { label: 'On the Horizon', href: '#upcoming' },
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -19,7 +20,7 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const sections = ['about', 'projects', 'experience', 'contact']
+    const sections = ['about', 'projects', 'upcoming', 'experience', 'contact']
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

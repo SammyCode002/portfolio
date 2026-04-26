@@ -1,0 +1,126 @@
+import { useScrollFade } from '../hooks/useScrollFade'
+
+const adventures = [
+  {
+    title: 'SANS San Francisco 2026',
+    description: 'Attending one of the premier cybersecurity training events in the industry. Taking SEC401: Security Essentials covering network, endpoint, and cloud security toward GIAC certification. Nov 2 - 7, 2026 at the Hilton Financial District.',
+    tags: ['SANS', 'SEC401', 'GIAC', 'Cybersecurity'],
+    date: 'Nov 2026',
+    location: 'San Francisco, CA',
+    preview: '/sans_sf.png',
+    accentColor: '#6366f1',
+    primaryLink: { url: 'https://www.sans.org/cyber-security-training-events/san-francisco-2026/', label: 'Event Info' },
+  },
+  {
+    title: 'Seoul & Tokyo Study Abroad',
+    description: 'OSU faculty-led program exploring art, design, and cultural innovation across two of East Asia\'s most dynamic creative capitals. Emphasizes global creative thinking and how culture, technology, and design come together to shape today\'s creative industries through on-site learning, workshops, and design studios.',
+    tags: ['Design Thinking', 'Cross-Cultural', 'OSU', 'Study Abroad'],
+    date: 'Summer 2026',
+    location: 'Seoul, South Korea & Tokyo, Japan',
+    preview: '/seoul_tokyo.png',
+    accentColor: '#f59e0b',
+    primaryLink: null,
+  },
+]
+
+export default function Upcoming() {
+  const headerRef = useScrollFade(0)
+  const gridRef = useScrollFade(120)
+
+  return (
+    <section
+      id="upcoming"
+      className="py-24 px-6 relative overflow-hidden"
+      style={{
+        background: 'radial-gradient(ellipse at 50% 20%, rgba(99,102,241,0.04) 0%, transparent 60%), #050c0c',
+      }}
+    >
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a3232] to-transparent" />
+      <div className="absolute top-1/3 left-0 w-80 h-80 rounded-full opacity-[0.03] blur-3xl pointer-events-none"
+        style={{ background: 'radial-gradient(circle, #6366f1, transparent)' }} />
+      <div className="absolute bottom-1/3 right-0 w-72 h-72 rounded-full opacity-[0.03] blur-3xl pointer-events-none"
+        style={{ background: 'radial-gradient(circle, #f59e0b, transparent)' }} />
+
+      <div className="max-w-6xl mx-auto">
+        <div ref={headerRef} className="mb-16">
+          <p className="text-[#00d4d4] text-sm font-medium tracking-widest uppercase mb-3">Coming Up</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#e8f4f4]">
+            <span className="gradient-text">On the Horizon</span>
+          </h2>
+        </div>
+
+        <div ref={gridRef} className="grid md:grid-cols-2 gap-6">
+          {adventures.map((item) => (
+            <article
+              key={item.title}
+              className="glass-card rounded-2xl overflow-hidden flex flex-col group cursor-default"
+              style={{ borderTop: `1px solid ${item.accentColor}22` }}
+            >
+              {/* Preview image */}
+              <div className="relative w-full h-44 overflow-hidden">
+                <img
+                  src={item.preview}
+                  alt={item.title}
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#091414]" />
+                {/* Upcoming badge */}
+                <span
+                  className="absolute top-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded-full border flex items-center gap-1"
+                  style={{ color: item.accentColor, borderColor: `${item.accentColor}44`, background: 'rgba(5,12,12,0.75)' }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full inline-block animate-pulse" style={{ background: item.accentColor }} />
+                  Upcoming
+                </span>
+                <span
+                  className="absolute top-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded-full border"
+                  style={{ color: item.accentColor, borderColor: `${item.accentColor}44`, background: 'rgba(5,12,12,0.75)' }}
+                >
+                  {item.date}
+                </span>
+              </div>
+
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3
+                      className="text-[#e8f4f4] font-bold text-xl mb-1"
+                      style={{ transition: 'color 0.2s' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = item.accentColor}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#e8f4f4'}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="text-xs font-mono" style={{ color: item.accentColor }}>{item.location}</p>
+                  </div>
+                  {item.primaryLink && (
+                    <a
+                      href={item.primaryLink.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors no-underline text-[#4a6e6e] hover:text-[#00d4d4] flex-shrink-0 ml-3"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+
+                <p className="text-[#7a9e9e] text-sm leading-relaxed flex-1 mb-6">
+                  {item.description}
+                </p>
+
+                <div className="flex flex-wrap gap-x-3 gap-y-1">
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="text-xs text-[#4a6e6e] font-mono">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
