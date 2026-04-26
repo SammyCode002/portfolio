@@ -2,28 +2,6 @@ import { useScrollFade } from '../hooks/useScrollFade'
 
 const projects = [
   {
-    title: 'Maui LFMC Fire Maps',
-    description: 'NASA Harvest internship generating monthly Live Fuel Moisture Content maps for Maui County using the Galileo foundation model. Zero-shot transfer from CONUS training data to predict wildfire risk leading up to the 2023 Lahaina fire.',
-    tags: ['Python', 'PyTorch', 'Google Earth Engine', 'Remote Sensing', 'GIS'],
-    githubUrl: 'https://github.com/SammyCode002/maui-lfmc',
-    primaryLink: { url: 'https://maui-lfmc-web.vercel.app', label: 'Live Map', type: 'map' },
-    secondaryLink: { url: 'https://github.com/SammyCode002/maui-lfmc', label: 'View on GitHub', type: 'github' },
-    accentColor: '#00d4d4',
-    bgGradient: 'linear-gradient(135deg, rgba(0,212,212,0.12) 0%, rgba(5,12,12,1) 50%, rgba(20,184,166,0.06) 100%)',
-    preview: '/maui_study_area.png',
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
-        <circle cx="24" cy="24" r="18" stroke="#00d4d4" strokeWidth="1" />
-        <ellipse cx="24" cy="24" rx="18" ry="8" stroke="#00d4d4" strokeWidth="0.6" />
-        <ellipse cx="24" cy="24" rx="18" ry="14" stroke="#00d4d4" strokeWidth="0.4" transform="rotate(60 24 24)" />
-        <line x1="6" y1="24" x2="42" y2="24" stroke="#00d4d4" strokeWidth="0.5" />
-        <line x1="24" y1="6" x2="24" y2="42" stroke="#00d4d4" strokeWidth="0.5" />
-        <circle cx="24" cy="24" r="3" fill="#00d4d4" />
-        <circle cx="38" cy="16" r="2" fill="#00d4d4" opacity="0.8" />
-      </svg>
-    ),
-  },
-  {
     title: 'Maui Fire Research',
     description: 'Contributing to NSF RAPID grant analyzing 2023 Maui wildfire impacts and community resilience. Geospatial modeling with ArcGIS Pro and HPC, plus trauma-informed STEM outreach at Ka Hale A Ke Ola shelter.',
     tags: ['ArcGIS Pro', 'HPC', 'Python', 'NSF RAPID', 'Geospatial Analysis'],
