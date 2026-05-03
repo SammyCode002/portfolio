@@ -125,7 +125,7 @@ const timeline = [
     org: 'University of Hawaiʻi Maui College',
     period: 'Aug 2023 - May 2025',
     location: 'Kahului, HI',
-    description: "Natural Science — Information and Computer Sciences. GPA 3.85. Dean's List, STEM Academic Excellence Recognition.",
+    description: "Natural Science, Information and Computer Sciences. GPA 3.85. Dean's List, STEM Academic Excellence Recognition.",
     tags: ["Dean's List", 'GPA 3.85', 'STEM Excellence', 'Computer Science'],
     accent: '#00d4d4',
   },

@@ -47,7 +47,7 @@ export default function Specializations() {
             <span className="text-[#00d4d4] font-semibold">Oregon State University</span>, currently working as a{' '}
             <span className="text-[#e8f4f4] font-semibold">IT Specialist</span> at the{' '}
             <span className="text-[#00d4d4] font-semibold">Hawaii State Department of Education</span>.
-            My background spans cybersecurity, GIS, research computing, and IT.
+            My background spans cybersecurity, climate tech, research computing, and IT.
           </p>
           <p className="text-[#b0cece] text-lg leading-relaxed mb-12">
             I have contributed to{' '}

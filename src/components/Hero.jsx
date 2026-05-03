@@ -285,7 +285,7 @@ export default function Hero() {
             Computer Science student and IT professional specializing in{' '}
             <span className="text-[#00d4d4]">cybersecurity</span>,{' '}
             <span className="text-[#14b8a6]">software engineering</span>, and{' '}
-            <span className="text-[#00d4d4]">GIS</span>. Based in Maui, Hawaii.
+            <span className="text-[#00d4d4]">climate tech</span>. Based in Maui, Hawaii.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
