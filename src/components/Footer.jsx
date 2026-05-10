@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
               <span className="font-semibold text-[#eaf6fb] text-sm">Sam Dameg</span>
             </div>
-            <p className="text-[#6a8aa8] text-xs">CS Student & IT Professional · Maui, HI</p>
+            <p className="text-[#6a8aa8] text-xs">CS Student & IT Professional</p>
           </div>
 
           {/* Nav links */}

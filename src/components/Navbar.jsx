@@ -4,9 +4,9 @@ import GlobalClock from './GlobalClock'
 
 const navLinks = [
   { label: 'About', page: 'about' },
+  { label: 'Experience', page: 'experience' },
   { label: 'Projects', page: 'projects' },
   { label: 'On the Horizon', page: 'upcoming' },
-  { label: 'Experience', page: 'experience' },
   { label: 'Contact', page: 'contact' },
 ]
 

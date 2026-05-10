@@ -2,6 +2,23 @@ import { useScrollFade } from '../hooks/useScrollFade'
 
 const projects = [
   {
+    title: 'Vault Password Manager',
+    description: 'Local-only desktop password manager built in Python. AES-128-CBC encryption via Fernet, PBKDF2-SHA256 key derivation at 600,000 iterations (OWASP 2023 minimum), HMAC-SHA256 tamper detection, and master password never stored. Includes password generator with entropy strength meter, CSV import/export, clipboard auto-clear, and configurable auto-lock.',
+    tags: ['Python', 'Cryptography', 'Fernet', 'PBKDF2', 'Tkinter', 'SQLite'],
+    githubUrl: null,
+    primaryLink: { url: 'https://github.com/SammyCode002/vault-password-manager', label: 'View on GitHub', type: 'github' },
+    accentColor: '#6bcce8',
+    bgGradient: 'linear-gradient(135deg, rgba(107,204,232,0.12) 0%, rgba(10,21,37,1) 50%, rgba(107,204,232,0.06) 100%)',
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
+        <rect x="12" y="22" width="24" height="18" rx="2" stroke="#6bcce8" strokeWidth="1.2" />
+        <path d="M16 22 V16 a8 8 0 0 1 16 0 V22" stroke="#6bcce8" strokeWidth="1.2" />
+        <circle cx="24" cy="30" r="2" fill="#6bcce8" opacity="0.7" />
+        <line x1="24" y1="32" x2="24" y2="36" stroke="#6bcce8" strokeWidth="1.2" />
+      </svg>
+    ),
+  },
+  {
     title: 'STEM Achievers',
     description: 'Free summer STEM program for Maui middle schoolers at University of Hawaii Maui College. Powered by NACCE, the program covers AI, robotics, 3D printing, and coding. July 6–17, 2026.',
     tags: ['STEM Education', 'Curriculum Design', 'AI & Robotics', '3D Printing', 'NACCE'],
