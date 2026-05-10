@@ -19,7 +19,7 @@ const PAGES = {
   contact: Contact,
 }
 
-function ActivePage() {
+function ActivePage({ ready }) {
   const { page } = useNav()
   const Component = PAGES[page] || Hero
   return (
@@ -27,7 +27,7 @@ function ActivePage() {
       key={page}
       className="page-fade flex-1 overflow-y-auto pt-16"
     >
-      <Component />
+      <Component ready={ready} />
       <Footer />
     </main>
   )
@@ -40,7 +40,7 @@ export default function App() {
     <NavProvider>
       <div className="relative h-full flex flex-col">
         <Navbar />
-        <ActivePage />
+        <ActivePage ready={!loading} />
       </div>
       {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
     </NavProvider>

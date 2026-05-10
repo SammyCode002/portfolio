@@ -182,13 +182,14 @@ function GlobeAnimation() {
   )
 }
 
-function TypewriterHeading() {
+function TypewriterHeading({ ready }) {
   const FULL = 'hi, Sam here.'
   // Segment boundaries: "hi, " = 0-4, "Sam" = 4-7, " here." = 7-13
   const [count, setCount] = useState(0)
   const [done, setDone] = useState(false)
 
   useEffect(() => {
+    if (!ready) return
     let i = 0
     const delay = setTimeout(() => {
       const id = setInterval(() => {
@@ -202,7 +203,7 @@ function TypewriterHeading() {
       return () => clearInterval(id)
     }, 500)
     return () => clearTimeout(delay)
-  }, [])
+  }, [ready])
 
   const part1 = FULL.slice(0, Math.min(count, 4))
   const part2 = FULL.slice(4, Math.min(count, 7))
@@ -221,7 +222,7 @@ function TypewriterHeading() {
   )
 }
 
-export default function Hero() {
+export default function Hero({ ready = true }) {
   const { setPage } = useNav()
   const [offset, setOffset] = useState({ x: 0, y: 0 })
 
@@ -281,7 +282,7 @@ export default function Hero() {
             <span className="text-sm font-medium text-[#6bcce8]">Available for Work</span>
           </div>
 
-          <TypewriterHeading />
+          <TypewriterHeading ready={ready} />
 
           <p className="text-[#9ebed4] text-lg max-w-lg mb-10 leading-relaxed">
             Computer Science student and IT professional specializing in{' '}
