@@ -92,6 +92,13 @@ export default function Navbar() {
                 </svg>
               ),
             },
+            {
+              href: 'https://www.credly.com/users/sam-dameg/badges#credly',
+              label: 'Credly',
+              icon: (
+                <span className="font-bold text-sm leading-none" style={{ fontFamily: 'inherit' }}>C</span>
+              ),
+            },
           ].map(({ href, label, icon }) => (
             <a
               key={label}

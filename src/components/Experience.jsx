@@ -131,6 +131,41 @@ const timeline = [
   },
 ]
 
+const certifications = [
+  {
+    title: 'Google Cybersecurity Certificate',
+    issuer: 'Google',
+    date: 'Jul 2023',
+    credentialId: 'P6Y5Z4PDPHZR',
+    url: 'https://www.credly.com/earner/earned/badge/24a00bfa-5457-4e3a-a5db-e0cc5f917023',
+    accent: '#6bcce8',
+  },
+  {
+    title: 'Certified in Cybersecurity (CC)',
+    issuer: 'ISC2',
+    date: 'Jul 2023',
+    credentialId: 'EFP2GTJKV2TD',
+    url: 'https://www.coursera.org/account/accomplishments/specialization/certificate/EFP2GTJKV2TD',
+    accent: '#6bb8e8',
+  },
+  {
+    title: 'Cybersecurity Operations Fundamentals',
+    issuer: 'Cisco',
+    date: 'Aug 2023',
+    credentialId: 'TAL46GVTNNWA',
+    url: 'https://www.coursera.org/account/accomplishments/specialization/certificate/TAL46GVTNNWA',
+    accent: '#3aa9d4',
+  },
+  {
+    title: 'Introduction to Cyber Attacks',
+    issuer: 'NYU Tandon School of Engineering',
+    date: 'Aug 2023',
+    credentialId: 'HEQFVTWZ8EBR',
+    url: 'https://www.coursera.org/account/accomplishments/certificate/HEQFVTWZ8EBR',
+    accent: '#b6e3f4',
+  },
+]
+
 function TimelineIcon({ type, accent }) {
   if (type === 'education') {
     return (
@@ -273,6 +308,49 @@ export default function Experience() {
           <div className="flex flex-col gap-0">
             {timeline.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} />
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="mt-20">
+          <p className="text-[#6bcce8] text-sm font-medium tracking-widest uppercase mb-3">Credentials</p>
+          <h3 className="text-3xl md:text-4xl font-bold text-[#eaf6fb] mb-8">
+            <span className="gradient-text">Certifications</span>
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {certifications.map((cert) => (
+              <a
+                key={cert.credentialId}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card rounded-xl p-5 flex flex-col gap-2 no-underline transition-all hover:-translate-y-0.5 group"
+                style={{ borderTop: `1px solid ${cert.accent}33` }}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <span
+                    className="text-xs font-semibold uppercase tracking-wide"
+                    style={{ color: cert.accent }}
+                  >
+                    {cert.issuer}
+                  </span>
+                  <span className="text-[#6a8aa8] text-xs font-medium">{cert.date}</span>
+                </div>
+                <h4 className="text-[#eaf6fb] font-semibold text-base leading-snug">{cert.title}</h4>
+                <div className="flex items-center justify-between gap-3 mt-auto pt-1">
+                  <p className="text-[#6a8aa8] text-xs font-mono">ID: {cert.credentialId}</p>
+                  <span
+                    className="inline-flex items-center gap-1 text-xs font-medium transition-colors"
+                    style={{ color: cert.accent }}
+                  >
+                    View Credential
+                    <svg className="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </div>
