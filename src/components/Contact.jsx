@@ -46,8 +46,8 @@ const contactInfo = [
 function InputField({ label, id, type = 'text', placeholder, value, onChange, required }) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-sm font-medium text-[#7a9e9e]">
-        {label} {required && <span className="text-[#00d4d4]">*</span>}
+      <label htmlFor={id} className="text-sm font-medium text-[#9ebed4]">
+        {label} {required && <span className="text-[#6bcce8]">*</span>}
       </label>
       <input
         id={id}
@@ -56,7 +56,7 @@ function InputField({ label, id, type = 'text', placeholder, value, onChange, re
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full px-4 py-3 rounded-xl bg-[#091414] border border-[#1a3232] text-[#e8f4f4] placeholder-[#4a6e6e] text-sm outline-none transition-all focus:border-[#00d4d4]/50 focus:ring-1 focus:ring-[#00d4d4]/20 hover:border-[#1a4040]"
+        className="w-full px-4 py-3 rounded-xl bg-[#0e2548] border border-[#1d3458] text-[#eaf6fb] placeholder-[#6a8aa8] text-sm outline-none transition-all focus:border-[#6bcce8]/50 focus:ring-1 focus:ring-[#6bcce8]/20 hover:border-[#2a6fb5]"
         style={{ fontFamily: 'Inter, sans-serif' }}
       />
     </div>
@@ -94,36 +94,36 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 px-6 relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a3232] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1d3458] to-transparent" />
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <p className="text-[#00d4d4] text-sm font-medium tracking-widest uppercase mb-3">Get In Touch</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#e8f4f4]">
+          <p className="text-[#6bcce8] text-sm font-medium tracking-widest uppercase mb-3">Get In Touch</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#eaf6fb]">
             Let's{' '}
             <span className="gradient-text">Connect</span>
           </h2>
-          <p className="text-[#7a9e9e] text-lg mt-4 max-w-xl">
+          <p className="text-[#9ebed4] text-lg mt-4 max-w-xl">
             Open to new opportunities, collaborations, and conversations about tech in Hawaii and beyond.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-10">
-          {/* Contact form — 3 cols */}
+          {/* Contact form (3 cols) */}
           <div className="lg:col-span-3">
             <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-[#e8f4f4] font-semibold text-lg mb-6">Send a Message</h3>
+              <h3 className="text-[#eaf6fb] font-semibold text-lg mb-6">Send a Message</h3>
 
               {status === 'sent' ? (
                 <div className="flex flex-col items-center justify-center py-12 gap-4">
-                  <div className="w-14 h-14 rounded-full bg-[#00d4d4]/10 border border-[#00d4d4]/30 flex items-center justify-center animate-pulse-glow">
-                    <svg className="w-7 h-7 text-[#00d4d4]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <div className="w-14 h-14 rounded-full bg-[#6bcce8]/10 border border-[#6bcce8]/30 flex items-center justify-center animate-pulse-glow">
+                    <svg className="w-7 h-7 text-[#6bcce8]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-[#e8f4f4] font-medium">Message sent!</p>
-                  <p className="text-[#7a9e9e] text-sm text-center">Thanks for reaching out. I'll get back to you soon.</p>
+                  <p className="text-[#eaf6fb] font-medium">Message sent!</p>
+                  <p className="text-[#9ebed4] text-sm text-center">Thanks for reaching out. I'll get back to you soon.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -147,8 +147,8 @@ export default function Contact() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="text-sm font-medium text-[#7a9e9e]">
-                      Message <span className="text-[#00d4d4]">*</span>
+                    <label htmlFor="message" className="text-sm font-medium text-[#9ebed4]">
+                      Message <span className="text-[#6bcce8]">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -157,7 +157,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={handleChange('message')}
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-[#091414] border border-[#1a3232] text-[#e8f4f4] placeholder-[#4a6e6e] text-sm outline-none transition-all focus:border-[#00d4d4]/50 focus:ring-1 focus:ring-[#00d4d4]/20 hover:border-[#1a4040] resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-[#0e2548] border border-[#1d3458] text-[#eaf6fb] placeholder-[#6a8aa8] text-sm outline-none transition-all focus:border-[#6bcce8]/50 focus:ring-1 focus:ring-[#6bcce8]/20 hover:border-[#2a6fb5] resize-none"
                       style={{ fontFamily: 'Inter, sans-serif' }}
                     />
                   </div>
@@ -165,7 +165,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === 'sending'}
-                    className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#00d4d4] text-[#050c0c] font-semibold text-sm hover:bg-[#00bcbc] transition-all disabled:opacity-60 disabled:cursor-not-allowed glow-cyan"
+                    className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#6bcce8] text-[#0a1525] font-semibold text-sm hover:bg-[#3aa9d4] transition-all disabled:opacity-60 disabled:cursor-not-allowed glow-cyan"
                   >
                     {status === 'sending' ? (
                       <>
@@ -176,7 +176,7 @@ export default function Contact() {
                         Sending...
                       </>
                     ) : status === 'error' ? (
-                      <>Something went wrong — try emailing directly.</>
+                      <>Something went wrong. Try emailing directly.</>
                     ) : (
                       <>
                         Send Message
@@ -191,29 +191,29 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact info — 2 cols */}
+          {/* Contact info (2 cols) */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             <div className="glass-card rounded-2xl p-6 mb-2">
-              <h3 className="text-[#e8f4f4] font-semibold text-base mb-5">Contact Details</h3>
+              <h3 className="text-[#eaf6fb] font-semibold text-base mb-5">Contact Details</h3>
               <div className="flex flex-col gap-4">
                 {contactInfo.map(({ icon, label, value, href }) => (
                   <div key={label} className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#00d4d4]/8 border border-[#00d4d4]/15 flex items-center justify-center flex-shrink-0 text-[#00d4d4]">
+                    <div className="w-9 h-9 rounded-lg bg-[#6bcce8]/8 border border-[#6bcce8]/15 flex items-center justify-center flex-shrink-0 text-[#6bcce8]">
                       {icon}
                     </div>
                     <div>
-                      <p className="text-[#4a6e6e] text-xs mb-0.5">{label}</p>
+                      <p className="text-[#6a8aa8] text-xs mb-0.5">{label}</p>
                       {href ? (
                         <a
                           href={href}
                           target={href.startsWith('http') ? '_blank' : undefined}
                           rel="noopener noreferrer"
-                          className="text-[#7a9e9e] text-sm hover:text-[#00d4d4] transition-colors no-underline"
+                          className="text-[#9ebed4] text-sm hover:text-[#6bcce8] transition-colors no-underline"
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="text-[#7a9e9e] text-sm">{value}</p>
+                        <p className="text-[#9ebed4] text-sm">{value}</p>
                       )}
                     </div>
                   </div>
@@ -222,17 +222,17 @@ export default function Contact() {
             </div>
 
             {/* Availability card */}
-            <div className="glass-card rounded-2xl p-6 border border-[#00d4d4]/15">
+            <div className="glass-card rounded-2xl p-6 border border-[#6bcce8]/15">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-glow" />
-                <span className="text-[#00d4d4] text-sm font-medium">Available for Work</span>
+                <span className="text-[#6bcce8] text-sm font-medium">Available for Work</span>
               </div>
-              <p className="text-[#7a9e9e] text-sm leading-relaxed">
-                Currently seeking full-time or internship opportunities in tech and STEM.
+              <p className="text-[#9ebed4] text-sm leading-relaxed">
+                Currently seeking full-time or internship opportunities in tech.
               </p>
-              <div className="mt-4 pt-4 border-t border-[#1a3232]">
-                <p className="text-[#4a6e6e] text-xs">Response time</p>
-                <p className="text-[#e8f4f4] text-sm font-medium mt-0.5">Within 24 hours</p>
+              <div className="mt-4 pt-4 border-t border-[#1d3458]">
+                <p className="text-[#6a8aa8] text-xs">Response time</p>
+                <p className="text-[#eaf6fb] text-sm font-medium mt-0.5">Within 24 hours</p>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ const timeline = [
     location: 'Pukalani, HI · On-site',
     description: 'IT support and mobile device management for school district staff using Jamf and MDM solutions.',
     tags: ['MDM', 'Jamf', 'IT Support', 'Windows'],
-    accent: '#00d4d4',
+    accent: '#6bcce8',
   },
   {
     type: 'education',
@@ -19,7 +19,7 @@ const timeline = [
     location: 'Remote',
     description: 'Bachelor of Applied Science in Computer Science with a Cybersecurity focus.',
     tags: ['Cybersecurity', 'Computer Science'],
-    accent: '#14b8a6',
+    accent: '#6bb8e8',
   },
   {
     type: 'education',
@@ -29,7 +29,7 @@ const timeline = [
     location: 'Wisconsin',
     description: 'Completed intensive 2.5-week GIS conservation program combining hands-on fieldwork with technical mapping. Projects included trail restoration at Schmeeckle Reserve, shoreline restoration (planted 90+ native plants), water quality testing, and community mapping with local stakeholders through the Connected Communities Initiative (Maui-Wisconsin).',
     tags: ['GIS', 'Conservation', 'Cartographic Analysis', 'Web Mapping', 'Environmental Education'],
-    accent: '#2dd4bf',
+    accent: '#6bb8e8',
     newsLinks: [
       { label: 'View Projects on GitHub', url: 'https://github.com/SammyCode002/gis-conservation-wisconsin' },
     ],
@@ -42,7 +42,7 @@ const timeline = [
     location: 'Kahului, HI · On-site',
     description: 'Teaching free summer STEM program for Maui middle schoolers at UHMC. Program covers AI, robotics, 3D printing, and coding over a two-week intensive camp. Part of the national STEM Achievers initiative powered by NACCE.',
     tags: ['STEM', 'AI & Robotics', '3D Printing', 'Coding', 'NACCE'],
-    accent: '#f97316',
+    accent: '#3aa9d4',
   },
   {
     type: 'work',
@@ -52,7 +52,7 @@ const timeline = [
     location: 'Maui County, HI · On-site',
     description: 'Leading STEM program serving 150+ middle school students across Maui in four tech tracks: AI/Robotics, 3D Printing, Coding, and AR/VR. Integrating Hawaiian cultural practices with technology education.',
     tags: ['STEM', 'Robotics', '3D Printing', 'AR/VR', 'Micro:bit'],
-    accent: '#06b6d4',
+    accent: '#b6e3f4',
     newsLinks: [
       { label: 'Maui News', url: 'https://www.mauinews.com/news/local-news/2025/07/students-approve-as-summer-stem-program-doubles-in-size/' },
       { label: 'Hawaii Public Radio', url: 'https://www.hawaiipublicradio.org/local-news/2025-07-18/maui-students-explore-community-problems-tech-3d-printers-coding-ai' },
@@ -66,7 +66,7 @@ const timeline = [
     location: 'Hawaii · Remote',
     description: 'Completed the CITRUS (CyberInfrastructure TRaining for Undergraduates in Summer) program at the Hawaii Data Science Institute, an NSF-funded REU-style research experience. Worked with HPC systems and climate datasets across a four-week curriculum covering data cleaning, analysis, visualization, and research communication. Culminated in a research showcase presentation.',
     tags: ['Data Science', 'HPC', 'Climate Data', 'Visualization'],
-    accent: '#2dd4bf',
+    accent: '#6bb8e8',
   },
   {
     type: 'work',
@@ -76,7 +76,7 @@ const timeline = [
     location: 'Hybrid',
     description: 'Implementing trauma-informed STEM education for post-wildfire community recovery. Conducting weekly robotics, mathematics, and technology lessons at Ka Hale A Ke Ola shelter. Contributing to NSF RAPID grant research on community resilience.',
     tags: ['STEM', 'NSF RAPID', 'Trauma-Informed Education', 'Robotics'],
-    accent: '#00d4d4',
+    accent: '#6bcce8',
   },
   {
     type: 'internship',
@@ -86,7 +86,7 @@ const timeline = [
     location: 'Remote',
     description: 'Contributed to CC* Data Storage KoaStore HPC project. Developed on-demand applications including MATLAB, TensorBoard, and Code-Server for the UH Koa HPC cluster.',
     tags: ['HPC', 'MATLAB', 'Bash', 'Research Infrastructure'],
-    accent: '#14b8a6',
+    accent: '#6bb8e8',
   },
   {
     type: 'internship',
@@ -96,7 +96,7 @@ const timeline = [
     location: 'Paia, HI · Hybrid',
     description: 'Led Climate Change Toolkit project protecting the historic Paia Mantokuji Temple from coastal erosion. Conducted environmental monitoring using MATLAB, Python, automated data collection systems, and ReoLink monitoring system cameras. Earned Hawaii State Senate recognition for environmental leadership.',
     tags: ['Python', 'MATLAB', 'ReoLink Cameras', 'Coastal Conservation'],
-    accent: '#06b6d4',
+    accent: '#b6e3f4',
     newsLinks: [
       { label: 'Oceanit Blog', url: 'https://oceanit.com/how-students-powered-mauis-coastal-community-climate-change-toolkit-program/' },
       { label: 'Civil Beat', url: 'https://www.civilbeat.org/2024/08/this-buddhist-temple-is-collapsing-into-the-sea-off-maui/' },
@@ -111,7 +111,7 @@ const timeline = [
     location: 'Maui County, HI',
     description: 'Named contributor on NSF RAPID grant briefed to Senator Mazie Hirono\'s office (Nov 2023). Collaborated with University at Buffalo (Prof. Negar Elhami-Khorasani) to validate the SWUIFT fire spread model against documented Lahaina fire progression using NCAR high-resolution wind simulations. Contributed to geospatial modeling with ArcGIS Pro and HPC, community outreach, and image/video data collection.',
     tags: ['ArcGIS Pro', 'HPC', 'Python', 'NSF RAPID', 'AI', 'Geospatial Analysis'],
-    accent: '#2dd4bf',
+    accent: '#6bb8e8',
     newsLinks: [
       { label: 'Live Research Site', url: 'https://maui-fire.ikewai.org/' },
       { label: 'NSF RAPID (Named Contributor)', url: '/nsf-rapid/slide_13.png' },
@@ -127,7 +127,7 @@ const timeline = [
     location: 'Kahului, HI',
     description: "Natural Science, Information and Computer Sciences. GPA 3.85. Dean's List, STEM Academic Excellence Recognition.",
     tags: ["Dean's List", 'GPA 3.85', 'STEM Excellence', 'Computer Science'],
-    accent: '#00d4d4',
+    accent: '#6bcce8',
   },
 ]
 
@@ -189,23 +189,23 @@ function TimelineItem({ item, index }) {
               {typeLabel(item.type)}
             </span>
           </div>
-          <span className="text-[#4a6e6e] text-xs font-medium">{item.period}</span>
+          <span className="text-[#6a8aa8] text-xs font-medium">{item.period}</span>
         </div>
 
-        <h3 className="text-[#e8f4f4] font-semibold text-lg mt-2 mb-0.5">{item.title}</h3>
+        <h3 className="text-[#eaf6fb] font-semibold text-lg mt-2 mb-0.5">{item.title}</h3>
         <div className="flex items-center gap-2 mb-3">
           <span className="font-medium text-sm" style={{ color: item.accent }}>{item.org}</span>
-          <span className="text-[#4a6e6e]">·</span>
-          <span className="text-[#4a6e6e] text-sm">{item.location}</span>
+          <span className="text-[#6a8aa8]">·</span>
+          <span className="text-[#6a8aa8] text-sm">{item.location}</span>
         </div>
 
-        <p className="text-[#7a9e9e] text-sm leading-relaxed mb-4">{item.description}</p>
+        <p className="text-[#9ebed4] text-sm leading-relaxed mb-4">{item.description}</p>
 
         <div className="flex flex-wrap gap-1.5 mb-4">
           {item.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 rounded text-xs bg-[#0a1a1a] border border-[#1a3232] text-[#4a6e6e]"
+              className="px-2 py-0.5 rounded text-xs bg-[#0e2548] border border-[#1d3458] text-[#6a8aa8]"
             >
               {tag}
             </span>
@@ -247,21 +247,21 @@ export default function Experience() {
       id="experience"
       className="py-24 px-6 relative overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse at 15% 40%, rgba(6,182,212,0.04) 0%, transparent 55%), #050c0c',
+        background: 'radial-gradient(ellipse at 15% 40%, rgba(6,182,212,0.04) 0%, transparent 55%), #0a1525',
       }}
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a3232] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1d3458] to-transparent" />
       {/* Ambient blobs */}
       <div className="absolute top-1/3 right-0 w-96 h-96 rounded-full opacity-[0.03] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #00d4d4, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #6bcce8, transparent)' }} />
       <div className="absolute bottom-1/4 left-0 w-72 h-72 rounded-full opacity-[0.025] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #14b8a6, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #6bb8e8, transparent)' }} />
 
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div ref={headerRef} className="mb-16">
-          <p className="text-[#00d4d4] text-sm font-medium tracking-widest uppercase mb-3">Background</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#e8f4f4]">
+          <p className="text-[#6bcce8] text-sm font-medium tracking-widest uppercase mb-3">Background</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#eaf6fb]">
             Experience &{' '}
             <span className="gradient-text">Education</span>
           </h2>
@@ -269,7 +269,7 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative">
-          <div className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-[#00d4d4] via-[#1a3232] to-transparent" />
+          <div className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-[#6bcce8] via-[#1d3458] to-transparent" />
           <div className="flex flex-col gap-0">
             {timeline.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} />

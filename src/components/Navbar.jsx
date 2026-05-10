@@ -1,90 +1,69 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useNav } from '../context/NavContext'
+import GlobalClock from './GlobalClock'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'On the Horizon', href: '#upcoming' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', page: 'about' },
+  { label: 'Projects', page: 'projects' },
+  { label: 'On the Horizon', page: 'upcoming' },
+  { label: 'Experience', page: 'experience' },
+  { label: 'Contact', page: 'contact' },
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
+  const { page, setPage } = useNav()
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const sections = ['about', 'projects', 'upcoming', 'experience', 'contact']
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id)
-        })
-      },
-      { rootMargin: '-40% 0px -40% 0px' }
-    )
-    sections.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-    return () => observer.disconnect()
-  }, [])
+  const go = (target) => {
+    setPage(target)
+    setMobileOpen(false)
+  }
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#050c0c]/90 backdrop-blur-xl border-b border-[#1a3232]'
-          : 'bg-transparent'
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1525]/90 backdrop-blur-xl border-b border-[#1d3458] transition-all duration-300">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#hero"
-          className="group flex items-center gap-2 no-underline"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        <button
+          type="button"
+          onClick={() => go('hero')}
+          className="group flex items-center gap-2 bg-transparent border-0 cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-lg bg-[#00d4d4]/10 border border-[#00d4d4]/30 flex items-center justify-center group-hover:bg-[#00d4d4]/20 transition-colors">
-            <span className="text-[#00d4d4] font-bold text-sm">SD</span>
+          <div className="w-8 h-8 rounded-lg bg-[#6bcce8]/10 border border-[#6bcce8]/30 flex items-center justify-center group-hover:bg-[#6bcce8]/20 transition-colors">
+            <span className="text-[#6bcce8] font-bold text-sm">SD</span>
           </div>
-          <span className="font-semibold text-[#e8f4f4] group-hover:text-[#00d4d4] transition-colors">
+          <span className="font-semibold text-[#eaf6fb] group-hover:text-[#6bcce8] transition-colors">
             Sam Dameg
           </span>
-        </a>
+        </button>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map(({ label, href }) => {
-            const sectionId = href.replace('#', '')
-            const isActive = activeSection === sectionId
+          {navLinks.map(({ label, page: target }) => {
+            const isActive = page === target
             return (
-              <a
+              <button
                 key={label}
-                href={href}
-                className={`text-sm font-medium transition-colors no-underline relative group ${
-                  isActive ? 'text-[#00d4d4]' : 'text-[#7a9e9e] hover:text-[#e8f4f4]'
+                type="button"
+                onClick={() => go(target)}
+                className={`text-sm font-medium transition-colors relative group bg-transparent border-0 cursor-pointer p-0 ${
+                  isActive ? 'text-[#6bcce8]' : 'text-[#9ebed4] hover:text-[#eaf6fb]'
                 }`}
               >
                 {label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-px bg-[#00d4d4] transition-all duration-300 ${
+                  className={`absolute -bottom-1 left-0 h-px bg-[#6bcce8] transition-all duration-300 ${
                     isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
-              </a>
+              </button>
             )
           })}
         </div>
 
-        {/* Social Icons */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* Global Clock + Social Icons */}
+        <div className="hidden md:flex items-center gap-3">
+          <GlobalClock />
+          <div className="flex items-center gap-1">
           {[
             {
               href: 'mailto:samuel.dameg@k12.hi.us',
@@ -120,11 +99,12 @@ export default function Navbar() {
               target={href.startsWith('http') ? '_blank' : undefined}
               rel="noopener noreferrer"
               aria-label={label}
-              className="w-8 h-8 flex items-center justify-center rounded-lg text-[#4a6e6e] hover:text-[#00d4d4] hover:bg-[#00d4d4]/8 transition-all no-underline"
+              className="w-8 h-8 flex items-center justify-center rounded-lg text-[#6a8aa8] hover:text-[#6bcce8] hover:bg-[#6bcce8]/8 transition-all no-underline"
             >
               {icon}
             </a>
           ))}
+          </div>
         </div>
 
         {/* Resume Button + Mobile Toggle */}
@@ -133,7 +113,7 @@ export default function Navbar() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg border border-[#00d4d4]/40 text-[#00d4d4] text-sm font-medium hover:bg-[#00d4d4]/10 hover:border-[#00d4d4] transition-all no-underline"
+            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg border border-[#6bcce8]/40 text-[#6bcce8] text-sm font-medium hover:bg-[#6bcce8]/10 hover:border-[#6bcce8] transition-all no-underline"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -147,7 +127,8 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2 text-[#7a9e9e] hover:text-[#00d4d4] transition-colors"
+            type="button"
+            className="md:hidden flex flex-col gap-1.5 p-2 text-[#9ebed4] hover:text-[#6bcce8] transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -162,24 +143,24 @@ export default function Navbar() {
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
           mobileOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
-        } bg-[#050c0c]/95 backdrop-blur-xl border-b border-[#1a3232]`}
+        } bg-[#0a1525]/95 backdrop-blur-xl border-b border-[#1d3458]`}
       >
         <div className="px-6 py-4 flex flex-col gap-4">
-          {navLinks.map(({ label, href }) => (
-            <a
+          {navLinks.map(({ label, page: target }) => (
+            <button
               key={label}
-              href={href}
-              className="text-[#7a9e9e] hover:text-[#00d4d4] text-sm font-medium transition-colors no-underline"
-              onClick={() => setMobileOpen(false)}
+              type="button"
+              onClick={() => go(target)}
+              className="text-[#9ebed4] hover:text-[#6bcce8] text-sm font-medium transition-colors text-left bg-transparent border-0 cursor-pointer p-0"
             >
               {label}
-            </a>
+            </button>
           ))}
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#00d4d4]/40 text-[#00d4d4] text-sm font-medium w-fit hover:bg-[#00d4d4]/10 transition-all no-underline"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#6bcce8]/40 text-[#6bcce8] text-sm font-medium w-fit hover:bg-[#6bcce8]/10 transition-all no-underline"
           >
             Resume
           </a>

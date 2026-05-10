@@ -28,18 +28,18 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-[#1a3232] py-12 px-6">
+    <footer className="relative border-t border-[#1d3458] py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-[#00d4d4]/10 border border-[#00d4d4]/30 flex items-center justify-center">
-                <span className="text-[#00d4d4] font-bold text-xs">SD</span>
+              <div className="w-7 h-7 rounded-lg bg-[#6bcce8]/10 border border-[#6bcce8]/30 flex items-center justify-center">
+                <span className="text-[#6bcce8] font-bold text-xs">SD</span>
               </div>
-              <span className="font-semibold text-[#e8f4f4] text-sm">Sam Dameg</span>
+              <span className="font-semibold text-[#eaf6fb] text-sm">Sam Dameg</span>
             </div>
-            <p className="text-[#4a6e6e] text-xs">CS Student & IT Professional · Maui, HI</p>
+            <p className="text-[#6a8aa8] text-xs">CS Student & IT Professional · Maui, HI</p>
           </div>
 
           {/* Nav links */}
@@ -48,7 +48,7 @@ export default function Footer() {
               <a
                 key={label}
                 href={href}
-                className="text-[#4a6e6e] hover:text-[#00d4d4] text-sm transition-colors no-underline"
+                className="text-[#6a8aa8] hover:text-[#6bcce8] text-sm transition-colors no-underline"
               >
                 {label}
               </a>
@@ -64,7 +64,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="w-9 h-9 rounded-lg bg-[#091414] border border-[#1a3232] flex items-center justify-center text-[#4a6e6e] hover:text-[#00d4d4] hover:border-[#00d4d4]/30 hover:bg-[#00d4d4]/5 transition-all no-underline"
+                className="w-9 h-9 rounded-lg bg-[#0e2548] border border-[#1d3458] flex items-center justify-center text-[#6a8aa8] hover:text-[#6bcce8] hover:border-[#6bcce8]/30 hover:bg-[#6bcce8]/5 transition-all no-underline"
               >
                 {icon}
               </a>
@@ -73,11 +73,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 pt-6 border-t border-[#1a3232]/50 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[#4a6e6e] text-xs">
+        <div className="mt-8 pt-6 border-t border-[#1d3458]/50 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-[#6a8aa8] text-xs">
             © {new Date().getFullYear()} Sam Dameg. Built with React & Tailwind CSS.
           </p>
-          <p className="text-[#4a6e6e] text-xs flex items-center gap-1.5">
+          <p className="text-[#6a8aa8] text-xs flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500/60" />
             Maui, Hawaii
           </p>

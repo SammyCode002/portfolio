@@ -8,7 +8,7 @@ const skills = [
   'Kali Linux', 'Wireshark', 'Nmap',
   'HPC / Slurm', 'Jamf MDM', 'Linux', 'Git',
 ]
-const accent = '#00d4d4'
+const accent = '#6bcce8'
 
 export default function Specializations() {
   const headerRef = useScrollFade(0)
@@ -21,39 +21,39 @@ export default function Specializations() {
       id="about"
       className="py-24 px-6 relative overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse at 25% 50%, rgba(0,212,212,0.04) 0%, transparent 55%), #050c0c',
+        background: 'radial-gradient(ellipse at 25% 50%, rgba(107,204,232,0.04) 0%, transparent 55%), #0a1525',
       }}
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a3232] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1d3458] to-transparent" />
       {/* Ambient blobs */}
       <div className="absolute top-1/2 right-0 w-80 h-80 rounded-full opacity-[0.04] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #14b8a6, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #6bb8e8, transparent)' }} />
 
       <div className="max-w-3xl mx-auto">
 
         {/* Heading */}
         <div ref={headerRef}>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#e8f4f4] mb-12 flex items-center gap-4">
-            <span className="text-[#00d4d4] font-mono font-normal">/</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#eaf6fb] mb-12 flex items-center gap-4">
+            <span className="text-[#6bcce8] font-mono font-normal">/</span>
             <span>about <span className="gradient-text">me</span></span>
-            <span className="flex-1 h-px bg-gradient-to-r from-[#1a3232] to-transparent ml-4 hidden sm:block" />
+            <span className="flex-1 h-px bg-gradient-to-r from-[#1d3458] to-transparent ml-4 hidden sm:block" />
           </h2>
         </div>
 
         {/* Bio */}
         <div ref={bioRef}>
-          <p className="text-[#b0cece] text-lg leading-relaxed mb-6">
-            I am a <span className="text-[#e8f4f4] font-semibold">Computer Science</span> student at{' '}
-            <span className="text-[#00d4d4] font-semibold">Oregon State University</span>, currently working as a{' '}
-            <span className="text-[#e8f4f4] font-semibold">IT Specialist</span> at the{' '}
-            <span className="text-[#00d4d4] font-semibold">Hawaii State Department of Education</span>.
+          <p className="text-[#c0d8e8] text-lg leading-relaxed mb-6">
+            I am a <span className="text-[#eaf6fb] font-semibold">Computer Science</span> student at{' '}
+            <span className="text-[#6bcce8] font-semibold">Oregon State University</span>, currently working as a{' '}
+            <span className="text-[#eaf6fb] font-semibold">IT Specialist</span> at the{' '}
+            <span className="text-[#6bcce8] font-semibold">Hawaii State Department of Education</span>.
             My background spans cybersecurity, climate tech, research computing, and IT.
           </p>
-          <p className="text-[#b0cece] text-lg leading-relaxed mb-12">
+          <p className="text-[#c0d8e8] text-lg leading-relaxed mb-12">
             I have contributed to{' '}
-            <span className="text-[#e8f4f4] font-semibold">NSF-funded wildfire research</span>,{' '}
-            <span className="text-[#e8f4f4] font-semibold">coastal erosion monitoring</span> with Oceanit, and{' '}
-            <span className="text-[#00d4d4] font-semibold">STEM education outreach</span> through Verizon Innovative Learning and STEM Achievers at the University of Hawaii Maui College.
+            <span className="text-[#eaf6fb] font-semibold">NSF-funded wildfire research</span>,{' '}
+            <span className="text-[#eaf6fb] font-semibold">coastal erosion monitoring</span> with Oceanit, and{' '}
+            <span className="text-[#6bcce8] font-semibold">STEM education outreach</span> through Verizon Innovative Learning and STEM Achievers at the University of Hawaii Maui College.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function Specializations() {
                 style={{
                   background: `${accent}0d`,
                   border: `1px solid ${accent}25`,
-                  color: '#b0cece',
+                  color: '#c0d8e8',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = `${accent}60`
@@ -82,7 +82,7 @@ export default function Specializations() {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = `${accent}25`
-                  e.currentTarget.style.color = '#b0cece'
+                  e.currentTarget.style.color = '#c0d8e8'
                   e.currentTarget.style.background = `${accent}0d`
                 }}
               >
@@ -93,7 +93,7 @@ export default function Specializations() {
         </div>
 
         {/* Personal */}
-        <p ref={footerRef} className="text-[#b0cece] text-lg leading-relaxed">
+        <p ref={footerRef} className="text-[#c0d8e8] text-lg leading-relaxed">
           Outside of tech, I love video games.
         </p>
       </div>

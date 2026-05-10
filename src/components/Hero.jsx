@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useNav } from '../context/NavContext'
 
 function GlobeAnimation() {
   const canvasRef = useRef(null)
@@ -33,12 +34,12 @@ function GlobeAnimation() {
 
     // Orbital rings: inclination + longitude of ascending node
     const orbits = [
-      { inc: 0.45, lan: 0.3, r: R * 1.35, speed: 0.009, color: '#00d4d4' },
-      { inc: -0.8, lan: 2.0, r: R * 1.28, speed: 0.006, color: '#14b8a6' },
-      { inc: 1.15, lan: 3.7, r: R * 1.42, speed: 0.013, color: '#06b6d4' },
+      { inc: 0.45, lan: 0.3, r: R * 1.35, speed: 0.009, color: '#6bcce8' },
+      { inc: -0.8, lan: 2.0, r: R * 1.28, speed: 0.006, color: '#6bb8e8' },
+      { inc: 1.15, lan: 3.7, r: R * 1.42, speed: 0.013, color: '#b6e3f4' },
     ]
 
-    // Pre-compute static ring dot positions (no globe spin — rings are fixed in space)
+    // Pre-compute static ring dot positions (no globe spin, rings are fixed in space)
     const orbitRings = orbits.map((orbit) => {
       const pts = []
       for (let a = 0; a < Math.PI * 2; a += 0.07) {
@@ -82,7 +83,7 @@ function GlobeAnimation() {
 
       // Subtle background glow
       const bgGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.15)
-      bgGlow.addColorStop(0, 'rgba(0,212,212,0.07)')
+      bgGlow.addColorStop(0, 'rgba(107,204,232,0.07)')
       bgGlow.addColorStop(1, 'transparent')
       ctx.fillStyle = bgGlow
       ctx.fillRect(0, 0, W, H)
@@ -124,7 +125,7 @@ function GlobeAnimation() {
           const alpha = Math.pow(nz, 1.4) * 0.9
           const size = nz * 2.8 + 0.4
           ctx.globalAlpha = alpha * (el.isEquator ? 1.5 : 1)
-          ctx.fillStyle = el.isEquator ? '#00ffff' : el.isMeridian ? '#14b8a6' : '#00d4d4'
+          ctx.fillStyle = el.isEquator ? '#b6e3f4' : el.isMeridian ? '#6bb8e8' : '#6bcce8'
           ctx.fillRect(cx + el.x - size / 2, cy - el.y - size / 2, size, size)
 
         } else if (el.kind === 'ring') {
@@ -209,11 +210,11 @@ function TypewriterHeading() {
 
   return (
     <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
-      <span className="text-[#e8f4f4]">{part1}</span>
+      <span className="text-[#eaf6fb]">{part1}</span>
       <span className="gradient-text glow-cyan-text">{part2}</span>
-      <span className="text-[#e8f4f4]">{part3}</span>
+      <span className="text-[#eaf6fb]">{part3}</span>
       <span
-        className="text-[#00d4d4]"
+        className="text-[#6bcce8]"
         style={{ animation: done ? 'blink 1s step-end infinite' : 'none' }}
       >|</span>
     </h1>
@@ -221,6 +222,7 @@ function TypewriterHeading() {
 }
 
 export default function Hero() {
+  const { setPage } = useNav()
   const [offset, setOffset] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -240,20 +242,20 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex items-center overflow-hidden grid-bg"
-      style={{ background: '#050c0c' }}
+      style={{ background: '#0a1525' }}
     >
       {/* Ambient glows */}
       <div
         className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full opacity-[0.07] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #00d4d4, transparent)' }}
+        style={{ background: 'radial-gradient(circle, #6bcce8, transparent)' }}
       />
       <div
         className="absolute bottom-1/3 left-1/5 w-64 h-64 rounded-full opacity-[0.05] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #14b8a6, transparent)' }}
+        style={{ background: 'radial-gradient(circle, #6bb8e8, transparent)' }}
       />
       <div
         className="absolute top-2/3 right-1/3 w-48 h-48 rounded-full opacity-[0.04] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #06b6d4, transparent)' }}
+        style={{ background: 'radial-gradient(circle, #b6e3f4, transparent)' }}
       />
 
       <div className="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center py-24">
@@ -265,7 +267,7 @@ export default function Hero() {
               transform: `translate(${offset.x}px, ${offset.y}px)`,
               transition: 'transform 0.15s ease-out',
               willChange: 'transform',
-              filter: 'drop-shadow(0 0 24px rgba(0,212,212,0.18))',
+              filter: 'drop-shadow(0 0 24px rgba(107,204,232,0.18))',
             }}
           >
             <GlobeAnimation />
@@ -274,43 +276,40 @@ export default function Hero() {
 
         {/* Text content */}
         <div className="animate-fade-in-up" style={{ animationDelay: '0.1s', opacity: 0 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00d4d4]/5 border border-[#00d4d4]/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6bcce8]/5 border border-[#6bcce8]/20 mb-8">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-glow" />
-            <span className="text-sm font-medium text-[#00d4d4]">Available for Work</span>
+            <span className="text-sm font-medium text-[#6bcce8]">Available for Work</span>
           </div>
 
           <TypewriterHeading />
 
-          <p className="text-[#7a9e9e] text-lg max-w-lg mb-10 leading-relaxed">
+          <p className="text-[#9ebed4] text-lg max-w-lg mb-10 leading-relaxed">
             Computer Science student and IT professional specializing in{' '}
-            <span className="text-[#00d4d4]">cybersecurity</span>,{' '}
-            <span className="text-[#14b8a6]">software engineering</span>, and{' '}
-            <span className="text-[#00d4d4]">climate tech</span>. Based in Maui, Hawaii.
+            <span className="text-[#6bcce8]">cybersecurity</span>,{' '}
+            <span className="text-[#6bb8e8]">software engineering</span>, and{' '}
+            <span className="text-[#6bcce8]">climate tech</span>. Based in Maui, Hawaii.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#projects"
-              className="group flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#00d4d4] text-[#050c0c] font-semibold text-sm hover:bg-[#00bcbc] transition-all no-underline glow-cyan"
+            <button
+              type="button"
+              onClick={() => setPage('projects')}
+              className="group flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#6bcce8] text-[#0a1525] font-semibold text-sm hover:bg-[#3aa9d4] transition-all glow-cyan border-0 cursor-pointer"
             >
               View Projects
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </a>
-            <a
-              href="#contact"
-              className="flex items-center gap-2 px-8 py-3.5 rounded-xl border border-[#1a3232] text-[#e8f4f4] font-semibold text-sm hover:border-[#00d4d4]/40 hover:bg-[#00d4d4]/5 transition-all no-underline"
+            </button>
+            <button
+              type="button"
+              onClick={() => setPage('contact')}
+              className="flex items-center gap-2 px-8 py-3.5 rounded-xl border border-[#1d3458] bg-transparent text-[#eaf6fb] font-semibold text-sm hover:border-[#6bcce8]/40 hover:bg-[#6bcce8]/5 transition-all cursor-pointer"
             >
               Contact Me
-            </a>
+            </button>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-[#4a6e6e] text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-[#4a6e6e] to-transparent" />
       </div>
     </section>
   )

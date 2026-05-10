@@ -7,16 +7,16 @@ const projects = [
     tags: ['STEM Education', 'Curriculum Design', 'AI & Robotics', '3D Printing', 'NACCE'],
     githubUrl: null,
     primaryLink: { url: '/stem_achievers_flyer.png', label: 'View Flyer', type: 'news' },
-    accentColor: '#f97316',
-    bgGradient: 'linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(5,12,12,1) 50%, rgba(234,88,12,0.06) 100%)',
+    accentColor: '#3aa9d4',
+    bgGradient: 'linear-gradient(135deg, rgba(58,169,212,0.12) 0%, rgba(10,21,37,1) 50%, rgba(58,169,212,0.06) 100%)',
     preview: '/stem_achievers_flyer.png',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
-        <path d="M8 36 L24 12 L40 36 Z" stroke="#f97316" strokeWidth="1" />
-        <circle cx="24" cy="22" r="5" stroke="#f97316" strokeWidth="0.8" />
-        <line x1="16" y1="36" x2="32" y2="36" stroke="#f97316" strokeWidth="1" />
-        <circle cx="12" cy="30" r="2" fill="#f97316" opacity="0.6" />
-        <circle cx="36" cy="30" r="2" fill="#f97316" opacity="0.6" />
+        <path d="M8 36 L24 12 L40 36 Z" stroke="#3aa9d4" strokeWidth="1" />
+        <circle cx="24" cy="22" r="5" stroke="#3aa9d4" strokeWidth="0.8" />
+        <line x1="16" y1="36" x2="32" y2="36" stroke="#3aa9d4" strokeWidth="1" />
+        <circle cx="12" cy="30" r="2" fill="#3aa9d4" opacity="0.6" />
+        <circle cx="36" cy="30" r="2" fill="#3aa9d4" opacity="0.6" />
       </svg>
     ),
   },
@@ -27,15 +27,15 @@ const projects = [
     githubUrl: null,
     primaryLink: { url: 'https://maui-fire.ikewai.org/', label: 'Live Site', type: 'map' },
     secondaryLink: { url: 'https://www.mauinews.com/news/local-news/2024/08/maui-recovers-uh-maui-students-turn-tragedy-into-a-community-building-opportunity/', label: 'In the News', type: 'news' },
-    accentColor: '#f97316',
-    bgGradient: 'linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(5,12,12,1) 50%, rgba(220,38,38,0.06) 100%)',
+    accentColor: '#3aa9d4',
+    bgGradient: 'linear-gradient(135deg, rgba(58,169,212,0.12) 0%, rgba(10,21,37,1) 50%, rgba(58,169,212,0.06) 100%)',
     preview: '/nsf-rapid/slide_13.png',
     previewLabel: 'NSF RAPID',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
-        <path d="M24 6 C18 12, 10 16, 12 26 C13 32, 18 36, 24 38 C30 36, 35 32, 36 26 C38 16, 30 12, 24 6Z" stroke="#f97316" strokeWidth="1" />
-        <path d="M24 18 C21 21, 18 24, 19 28 C20 31, 22 33, 24 34 C26 33, 28 31, 29 28 C30 24, 27 21, 24 18Z" stroke="#f97316" strokeWidth="0.8" />
-        <circle cx="24" cy="28" r="3" fill="#f97316" opacity="0.6" />
+        <path d="M24 6 C18 12, 10 16, 12 26 C13 32, 18 36, 24 38 C30 36, 35 32, 36 26 C38 16, 30 12, 24 6Z" stroke="#3aa9d4" strokeWidth="1" />
+        <path d="M24 18 C21 21, 18 24, 19 28 C20 31, 22 33, 24 34 C26 33, 28 31, 29 28 C30 24, 27 21, 24 18Z" stroke="#3aa9d4" strokeWidth="0.8" />
+        <circle cx="24" cy="28" r="3" fill="#3aa9d4" opacity="0.6" />
       </svg>
     ),
   },
@@ -45,17 +45,17 @@ const projects = [
     tags: ['ArcGIS StoryMap', 'GIS', 'Coastal Erosion', 'Sea Level Rise', 'Conservation'],
     githubUrl: null,
     primaryLink: { url: 'https://arcg.is/0iifCz', label: 'View StoryMap', type: 'map' },
-    accentColor: '#14b8a6',
-    bgGradient: 'linear-gradient(135deg, rgba(20,184,166,0.12) 0%, rgba(5,12,12,1) 50%, rgba(8,145,178,0.06) 100%)',
+    accentColor: '#6bb8e8',
+    bgGradient: 'linear-gradient(135deg, rgba(20,184,166,0.12) 0%, rgba(10,21,37,1) 50%, rgba(8,145,178,0.06) 100%)',
     preview: '/mantokuji_storymap.png',
     previewLabel: 'ArcGIS StoryMap',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
-        <circle cx="24" cy="24" r="16" stroke="#14b8a6" strokeWidth="1" />
-        <line x1="8" y1="24" x2="40" y2="24" stroke="#14b8a6" strokeWidth="0.8" />
-        <path d="M24 8 C18 14, 18 34, 24 40 C30 34, 30 14, 24 8Z" stroke="#14b8a6" strokeWidth="0.8" />
-        <path d="M10 16 Q24 20, 38 16" stroke="#14b8a6" strokeWidth="0.6" />
-        <path d="M10 32 Q24 28, 38 32" stroke="#14b8a6" strokeWidth="0.6" />
+        <circle cx="24" cy="24" r="16" stroke="#6bb8e8" strokeWidth="1" />
+        <line x1="8" y1="24" x2="40" y2="24" stroke="#6bb8e8" strokeWidth="0.8" />
+        <path d="M24 8 C18 14, 18 34, 24 40 C30 34, 30 14, 24 8Z" stroke="#6bb8e8" strokeWidth="0.8" />
+        <path d="M10 16 Q24 20, 38 16" stroke="#6bb8e8" strokeWidth="0.6" />
+        <path d="M10 32 Q24 28, 38 32" stroke="#6bb8e8" strokeWidth="0.6" />
       </svg>
     ),
   },
@@ -65,12 +65,12 @@ const projects = [
     tags: ['Coming Soon'],
     githubUrl: null,
     primaryLink: { url: '#', label: 'Coming Soon', type: 'soon' },
-    accentColor: '#a855f7',
-    bgGradient: 'linear-gradient(135deg, rgba(168,85,247,0.12) 0%, rgba(5,12,12,1) 50%, rgba(137,87,229,0.06) 100%)',
+    accentColor: '#b6e3f4',
+    bgGradient: 'linear-gradient(135deg, rgba(182,227,244,0.12) 0%, rgba(10,21,37,1) 50%, rgba(182,227,244,0.06) 100%)',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
-        <circle cx="24" cy="24" r="18" stroke="#a855f7" strokeWidth="1" />
-        <path d="M24 14 L24 24 L32 28" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="24" cy="24" r="18" stroke="#b6e3f4" strokeWidth="1" />
+        <path d="M24 14 L24 24 L32 28" stroke="#b6e3f4" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -81,16 +81,16 @@ const projects = [
     githubUrl: null,
     primaryLink: { url: 'https://oceanit.com/how-students-powered-mauis-coastal-community-climate-change-toolkit-program/', label: 'Oceanit Blog', type: 'news' },
     secondaryLink: { url: 'https://www.civilbeat.org/2024/08/this-buddhist-temple-is-collapsing-into-the-sea-off-maui/', label: 'Civil Beat', type: 'news' },
-    accentColor: '#14b8a6',
-    bgGradient: 'linear-gradient(135deg, rgba(20,184,166,0.12) 0%, rgba(5,12,12,1) 50%, rgba(8,145,178,0.06) 100%)',
+    accentColor: '#6bb8e8',
+    bgGradient: 'linear-gradient(135deg, rgba(20,184,166,0.12) 0%, rgba(10,21,37,1) 50%, rgba(8,145,178,0.06) 100%)',
     preview: '/oceanit_team.jpg',
     previewLabel: 'Oceanit',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
-        <path d="M4 28 Q10 22, 16 28 Q22 34, 28 28 Q34 22, 40 28 Q46 34, 52 28" stroke="#14b8a6" strokeWidth="1.2" strokeLinecap="round" />
-        <path d="M4 34 Q10 28, 16 34 Q22 40, 28 34 Q34 28, 40 34 Q46 40, 52 34" stroke="#14b8a6" strokeWidth="0.7" strokeLinecap="round" opacity="0.6" />
-        <path d="M20 28 L20 10 M24 26 L24 8 M28 28 L28 12" stroke="#14b8a6" strokeWidth="0.6" />
-        <circle cx="24" cy="6" r="3" fill="#14b8a6" opacity="0.7" />
+        <path d="M4 28 Q10 22, 16 28 Q22 34, 28 28 Q34 22, 40 28 Q46 34, 52 28" stroke="#6bb8e8" strokeWidth="1.2" strokeLinecap="round" />
+        <path d="M4 34 Q10 28, 16 34 Q22 40, 28 34 Q34 28, 40 34 Q46 40, 52 34" stroke="#6bb8e8" strokeWidth="0.7" strokeLinecap="round" opacity="0.6" />
+        <path d="M20 28 L20 10 M24 26 L24 8 M28 28 L28 12" stroke="#6bb8e8" strokeWidth="0.6" />
+        <circle cx="24" cy="6" r="3" fill="#6bb8e8" opacity="0.7" />
       </svg>
     ),
   },
@@ -105,22 +105,22 @@ export default function Projects() {
       id="projects"
       className="py-24 px-6 relative overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse at 70% 30%, rgba(0,212,212,0.04) 0%, transparent 60%), #050c0c',
+        background: 'radial-gradient(ellipse at 70% 30%, rgba(107,204,232,0.04) 0%, transparent 60%), #0a1525',
       }}
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a3232] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1d3458] to-transparent" />
       {/* Ambient blobs */}
       <div className="absolute top-1/4 right-0 w-96 h-96 rounded-full opacity-[0.04] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #00d4d4, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #6bcce8, transparent)' }} />
       <div className="absolute bottom-1/3 left-10 w-64 h-64 rounded-full opacity-[0.03] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #14b8a6, transparent)' }} />
+        style={{ background: 'radial-gradient(circle, #6bb8e8, transparent)' }} />
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div ref={headerRef} className="flex items-end justify-between mb-16 flex-wrap gap-6">
           <div>
-            <p className="text-[#00d4d4] text-sm font-medium tracking-widest uppercase mb-3">Featured Work</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#e8f4f4]">
+            <p className="text-[#6bcce8] text-sm font-medium tracking-widest uppercase mb-3">Featured Work</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#eaf6fb]">
               <span className="gradient-text">Projects</span>
             </h2>
           </div>
@@ -128,7 +128,7 @@ export default function Projects() {
             href="https://github.com/SammyCode002"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[#7a9e9e] hover:text-[#00d4d4] transition-colors no-underline"
+            className="flex items-center gap-2 text-sm text-[#9ebed4] hover:text-[#6bcce8] transition-colors no-underline"
           >
             View all on GitHub
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -153,17 +153,17 @@ export default function Projects() {
                     alt={`${project.title} preview`}
                     className="w-full h-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#091414]" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0e2548]" />
                   {project.previewLabel && (
                     <span
                       className="absolute top-2 right-2 text-[10px] font-mono px-2 py-0.5 rounded-full border"
-                      style={{ color: project.accentColor, borderColor: `${project.accentColor}44`, background: 'rgba(5,12,12,0.7)' }}
+                      style={{ color: project.accentColor, borderColor: `${project.accentColor}44`, background: 'rgba(10,21,37,0.7)' }}
                     >
                       {project.previewLabel}
                     </span>
                   )}
                   {project.primaryLink?.type === 'map' && (
-                    <span className="absolute top-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded-full border border-green-500/40 text-green-400 bg-[rgba(5,12,12,0.7)] flex items-center gap-1">
+                    <span className="absolute top-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded-full border border-green-500/40 text-green-400 bg-[rgba(10,21,37,0.7)] flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
                       Live
                     </span>
@@ -185,7 +185,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={project.secondaryLink.label}
-                      className="text-[#4a6e6e] hover:text-[#00d4d4] transition-colors no-underline"
+                      className="text-[#6a8aa8] hover:text-[#6bcce8] transition-colors no-underline"
                     >
                       {project.secondaryLink.type === 'github' ? (
                         <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -205,9 +205,9 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     aria-label={project.primaryLink.label}
                     className="transition-colors no-underline"
-                    style={{ color: project.primaryLink.type === 'map' ? project.accentColor : '#4a6e6e' }}
+                    style={{ color: project.primaryLink.type === 'map' ? project.accentColor : '#6a8aa8' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = project.accentColor}
-                    onMouseLeave={(e) => e.currentTarget.style.color = project.primaryLink.type === 'map' ? project.accentColor : '#4a6e6e'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = project.primaryLink.type === 'map' ? project.accentColor : '#6a8aa8'}
                   >
                     {project.primaryLink.type === 'github' ? (
                       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -230,23 +230,23 @@ export default function Projects() {
 
               {/* Title */}
               <h3
-                className="text-[#e8f4f4] font-bold text-xl mb-3 group-hover:transition-colors"
+                className="text-[#eaf6fb] font-bold text-xl mb-3 group-hover:transition-colors"
                 style={{ transition: 'color 0.2s' }}
                 onMouseEnter={(e) => e.currentTarget.style.color = project.accentColor}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#e8f4f4'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#eaf6fb'}
               >
                 {project.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#7a9e9e] text-sm leading-relaxed flex-1 mb-6">
+              <p className="text-[#9ebed4] text-sm leading-relaxed flex-1 mb-6">
                 {project.description}
               </p>
 
               {/* Tech tags */}
               <div className="flex flex-wrap gap-x-3 gap-y-1">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="text-xs text-[#4a6e6e] font-mono">
+                  <span key={tag} className="text-xs text-[#6a8aa8] font-mono">
                     {tag}
                   </span>
                 ))}
