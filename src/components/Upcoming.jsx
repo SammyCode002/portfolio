@@ -11,16 +11,6 @@ const adventures = [
     accentColor: '#6bcce8',
     primaryLink: { url: 'https://www.sans.org/cyber-security-training-events/san-francisco-2026/', label: 'Event Info' },
   },
-  {
-    title: 'Seoul & Tokyo Study Abroad',
-    description: 'OSU faculty-led program exploring art, design, and cultural innovation across two of East Asia\'s most dynamic creative capitals. Emphasizes global creative thinking and how culture, technology, and design come together to shape today\'s creative industries through on-site learning, workshops, and design studios.',
-    tags: ['Design Thinking', 'Cross-Cultural', 'OSU', 'Study Abroad'],
-    date: 'Summer 2026',
-    location: 'Seoul, South Korea & Tokyo, Japan',
-    preview: '/seoul_tokyo.png',
-    accentColor: '#3aa9d4',
-    primaryLink: null,
-  },
 ]
 
 export default function Upcoming() {
@@ -49,7 +39,7 @@ export default function Upcoming() {
           </h2>
         </div>
 
-        <div ref={gridRef} className="grid md:grid-cols-2 gap-6">
+        <div ref={gridRef} className={`grid gap-6 ${adventures.length > 1 ? 'md:grid-cols-2' : 'max-w-xl mx-auto'}`}>
           {adventures.map((item) => (
             <article
               key={item.title}

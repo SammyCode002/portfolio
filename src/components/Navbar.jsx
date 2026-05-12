@@ -37,7 +37,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 md:ml-12">
           {navLinks.map(({ label, page: target }) => {
             const isActive = page === target
             return (
