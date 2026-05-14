@@ -32,7 +32,7 @@ export class BootScene extends Phaser.Scene {
     this.makeMfaTexture()
     this.makeScanlineTexture()
 
-    this.scene.start('Game')
+    this.scene.start('Menu')
   }
 
   makePlayerTexture() {

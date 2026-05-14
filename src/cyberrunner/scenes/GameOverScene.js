@@ -288,16 +288,21 @@ export class GameOverScene extends Phaser.Scene {
   }
 
   showRetryPrompt() {
-    this.bottomPrompt.setText('[ SPACE / TAP to reconnect ]')
+    this.bottomPrompt.setText('[ SPACE to reconnect  •  ESC for menu ]')
     // small delay so accidental key bleed doesn't insta-restart
     this.time.delayedCall(250, () => {
       this.input.keyboard.once('keydown-SPACE', () => this.restart())
       this.input.keyboard.once('keydown-UP', () => this.restart())
+      this.input.keyboard.once('keydown-ESC', () => this.toMenu())
       this.input.once('pointerdown', () => this.restart())
     })
   }
 
   restart() {
     this.scene.start('Game')
+  }
+
+  toMenu() {
+    this.scene.start('Menu')
   }
 }
