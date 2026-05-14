@@ -19,6 +19,24 @@ const projects = [
     ),
   },
   {
+    title: 'Maui Alert Hub',
+    description: 'Real-time hyperlocal dashboard for Maui residents. Aggregates road closures, NWS weather alerts, USGS earthquakes and volcanic activity, NOAA surf, tsunami warnings, and EPA AirNow air quality into one mobile-first PWA. Web Push notifications fire when a saved route is affected. FastAPI backend with async SQLAlchemy + PostgreSQL on Render, React + Vite frontend on Vercel.',
+    tags: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Tailwind', 'Web Push', 'PWA'],
+    githubUrl: null,
+    primaryLink: { url: 'https://maui-alert-hub.vercel.app', label: 'Live Site', type: 'map' },
+    secondaryLink: { url: 'https://github.com/SammyCode002/maui-alert-hub', label: 'View on GitHub', type: 'github' },
+    accentColor: '#fb923c',
+    bgGradient: 'linear-gradient(135deg, rgba(251,146,60,0.12) 0%, rgba(10,21,37,1) 50%, rgba(251,146,60,0.06) 100%)',
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" className="w-full h-full opacity-20">
+        <path d="M24 8 C16 8, 10 14, 10 22 C10 30, 24 40, 24 40 C24 40, 38 30, 38 22 C38 14, 32 8, 24 8Z" stroke="#fb923c" strokeWidth="1.2" />
+        <circle cx="24" cy="22" r="4" stroke="#fb923c" strokeWidth="1" />
+        <circle cx="24" cy="22" r="8" stroke="#fb923c" strokeWidth="0.6" opacity="0.5" />
+        <circle cx="24" cy="22" r="2" fill="#fb923c" opacity="0.7" />
+      </svg>
+    ),
+  },
+  {
     title: 'STEM Achievers',
     description: 'Free summer STEM program for Maui middle schoolers at University of Hawaii Maui College. Powered by NACCE, the program covers AI, robotics, 3D printing, and coding. July 6–17, 2026.',
     tags: ['STEM Education', 'Curriculum Design', 'AI & Robotics', '3D Printing', 'NACCE'],
