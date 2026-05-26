@@ -34,6 +34,7 @@ const NAV_OFFSET = 72
 
 const NAV_LINK_DEFS = [
   { id: 'projects', label: 'projects' },
+  { id: 'press', label: 'press' },
   { id: 'experience', label: 'experience' },
   { id: 'education', label: 'education' },
   { id: 'play', label: 'play', external: '/cyberrunner.html' },
@@ -49,11 +50,13 @@ export default function RightNavbar() {
     const computeActive = () => {
       const introEl = document.getElementById('intro')
       const projectsEl = document.getElementById('projects')
+      const pressEl = document.getElementById('press')
       const expEl = document.getElementById('experience')
       const eduEl = document.getElementById('education')
       const y = panel.scrollTop + NAV_OFFSET + 24
       if (eduEl && y >= eduEl.offsetTop) setActive('education')
       else if (expEl && y >= expEl.offsetTop) setActive('experience')
+      else if (pressEl && y >= pressEl.offsetTop) setActive('press')
       else if (projectsEl && y >= projectsEl.offsetTop) setActive('projects')
       else if (introEl) setActive('intro')
     }

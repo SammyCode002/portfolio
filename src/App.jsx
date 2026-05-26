@@ -2,6 +2,7 @@ import LeftPanel from './components/LeftPanel'
 import RightNavbar from './components/RightNavbar'
 import Intro from './components/Intro'
 import Projects from './components/Projects'
+import Press from './components/Press'
 import Experience from './components/Experience'
 import { ThemeProvider } from './context/ThemeContext'
 
@@ -14,6 +15,7 @@ export default function App() {
           <RightNavbar />
           <Intro />
           <Projects />
+          <Press />
           <Experience />
         </main>
       </div>

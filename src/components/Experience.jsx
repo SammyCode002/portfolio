@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
 
 const timeline = [
@@ -252,6 +253,209 @@ function TimelineItem({ item, index, isLast }) {
   )
 }
 
+function TimelineCarousel({ items, type }) {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const item = items[activeIndex]
+  const total = items.length
+  const showArrows = total > 1
+  const next = () => setActiveIndex((activeIndex + 1) % total)
+  const prev = () => setActiveIndex((activeIndex - 1 + total) % total)
+
+  if (!item) return null
+
+  return (
+    <div style={{
+      position: 'relative',
+      borderRadius: '16px',
+      overflow: 'hidden',
+      border: '1px solid var(--border)',
+      background: `linear-gradient(135deg, ${item.accent}18 0%, var(--bg-card) 100%)`,
+      marginBottom: '20px',
+    }}>
+      <div style={{ padding: '22px 60px 22px 28px' }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          gap: '10px', marginBottom: '10px', flexWrap: 'wrap',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span style={{
+              padding: '3px 10px', borderRadius: '999px',
+              background: item.accent, color: 'white',
+              fontSize: '10px', fontWeight: '700',
+              textTransform: 'uppercase', letterSpacing: '0.06em',
+            }}>
+              {typeLabel(item.type)}
+            </span>
+            <span style={{
+              padding: '3px 10px', borderRadius: '999px',
+              background: 'var(--bg)', border: '1px solid var(--border)',
+              fontSize: '10px', fontWeight: '600', color: 'var(--text-muted)',
+              letterSpacing: '0.05em',
+            }}>
+              Featured · {activeIndex + 1} / {total}
+            </span>
+          </div>
+          <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{item.period}</span>
+        </div>
+
+        <h3 style={{
+          fontSize: '20px', fontWeight: '700',
+          color: 'var(--text)', margin: '0 0 6px',
+          lineHeight: '1.3',
+        }}>
+          {item.title}
+        </h3>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '12px', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '14px', fontWeight: '600', color: item.accent }}>{item.org}</span>
+          <span style={{ color: 'var(--border-bright)' }}>&middot;</span>
+          <span style={{ fontSize: '12.5px', color: 'var(--text-muted)' }}>{item.location}</span>
+        </div>
+
+        <p style={{
+          fontSize: '14px', lineHeight: '1.7', color: 'var(--text-secondary)',
+          margin: '0 0 14px', maxWidth: '760px',
+        }}>
+          {item.description}
+        </p>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: item.newsLinks ? '14px' : 0 }}>
+          {item.tags.map(tag => (
+            <span key={tag} style={{
+              padding: '3px 9px', borderRadius: '999px',
+              background: 'var(--bg-panel)', border: '1px solid var(--border)',
+              fontSize: '11px', color: 'var(--text-muted)', fontWeight: '500',
+            }}>
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {item.newsLinks && (
+          <div style={{
+            display: 'flex', flexWrap: 'wrap', gap: '14px',
+            paddingTop: '14px',
+            borderTop: '1px solid var(--border)',
+          }}>
+            {item.newsLinks.map(news => (
+              <a
+                key={news.url}
+                href={news.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  fontSize: '12.5px', fontWeight: '500', color: item.accent,
+                  textDecoration: 'none', transition: 'opacity 0.15s',
+                }}
+                onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+              >
+                {news.label}
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {showArrows && (
+        <>
+          <button type="button" onClick={prev} aria-label={`Previous ${type}`} style={carouselArrowStyle('left', item.accent)} onMouseEnter={carouselArrowHoverEnter(item.accent)} onMouseLeave={carouselArrowHoverLeave}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button type="button" onClick={next} aria-label={`Next ${type}`} style={carouselArrowStyle('right', item.accent)} onMouseEnter={carouselArrowHoverEnter(item.accent)} onMouseLeave={carouselArrowHoverLeave}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      {/* Pagination dots */}
+      {showArrows && (
+        <div style={{
+          display: 'flex', justifyContent: 'center', gap: '6px',
+          padding: '0 0 14px',
+        }}>
+          {items.map((it, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Show ${type} ${i + 1}`}
+              style={{
+                width: i === activeIndex ? '22px' : '7px',
+                height: '7px',
+                borderRadius: '999px',
+                background: i === activeIndex ? it.accent : 'var(--border)',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                padding: 0,
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function carouselArrowStyle(side, accent) {
+  return {
+    position: 'absolute', [side]: '10px', top: '40%', transform: 'translateY(-50%)',
+    width: '32px', height: '32px', borderRadius: '50%',
+    background: 'var(--bg)', border: '1px solid var(--border)',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    cursor: 'pointer',
+    color: 'var(--text-secondary)',
+    transition: 'all 0.15s',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.08)',
+    zIndex: 2,
+  }
+}
+function carouselArrowHoverEnter(accent) {
+  return (e) => {
+    e.currentTarget.style.background = accent
+    e.currentTarget.style.color = 'white'
+    e.currentTarget.style.borderColor = accent
+  }
+}
+function carouselArrowHoverLeave(e) {
+  e.currentTarget.style.background = 'var(--bg)'
+  e.currentTarget.style.color = 'var(--text-secondary)'
+  e.currentTarget.style.borderColor = 'var(--border)'
+}
+
+// Featured ordering: IT position first for work, Oregon State first for education
+const featuredWorkOrder = [
+  'Data Processing User Support Technician II',
+  'NASA ACRES Research Fellow',
+  'STEM Achievers Instructor',
+  'Verizon Innovative Learning Instructor',
+  'Maui Fire Research Analyst',
+  'STEM Squared Mentor',
+  'Student Ambassador & Coastal Engineer',
+  'CITRUS Program Research Intern',
+  'Cyberinfrastructure REU',
+]
+const featuredEducationOrder = [
+  'BASc, Computer Science Cybersecurity',
+  'GIS Conservation Field Studies',
+  'Computer Science',
+]
+
+function orderedSubset(orderArray, source) {
+  return orderArray
+    .map(title => source.find(item => item.title === title))
+    .filter(Boolean)
+}
+
 export default function Experience() {
   const experienceHeaderReveal = useScrollReveal(0)
   const educationHeaderReveal = useScrollReveal(0)
@@ -259,47 +463,33 @@ export default function Experience() {
 
   const workItems = timeline.filter(item => item.type !== 'education')
   const educationItems = timeline.filter(item => item.type === 'education')
+  const featuredWork = orderedSubset(featuredWorkOrder, workItems)
+  const featuredEducation = orderedSubset(featuredEducationOrder, educationItems)
 
   return (
     <>
       <section id="experience" className="panel-card" style={{ padding: '24px', scrollMarginTop: '72px' }}>
-        <div ref={experienceHeaderReveal.ref} style={{ ...experienceHeaderReveal.style, marginBottom: '24px' }}>
+        <div ref={experienceHeaderReveal.ref} style={{ ...experienceHeaderReveal.style, marginBottom: '20px' }}>
           <p className="section-header" style={{ marginBottom: '4px' }}>Background</p>
           <h2 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text)', margin: 0 }}>
             Experience
           </h2>
         </div>
 
-        <div>
-          {workItems.map((item, i) => (
-            <TimelineItem
-              key={`work-${i}`}
-              item={item}
-              index={i}
-              isLast={i === workItems.length - 1}
-            />
-          ))}
-        </div>
+        {/* Featured roles carousel */}
+        <TimelineCarousel items={featuredWork} type="role" />
       </section>
 
       <section id="education" className="panel-card" style={{ padding: '24px', scrollMarginTop: '72px' }}>
-        <div ref={educationHeaderReveal.ref} style={{ ...educationHeaderReveal.style, marginBottom: '24px' }}>
+        <div ref={educationHeaderReveal.ref} style={{ ...educationHeaderReveal.style, marginBottom: '20px' }}>
           <p className="section-header" style={{ marginBottom: '4px' }}>Learning</p>
           <h2 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text)', margin: 0 }}>
             Education
           </h2>
         </div>
 
-        <div>
-          {educationItems.map((item, i) => (
-            <TimelineItem
-              key={`edu-${i}`}
-              item={item}
-              index={i}
-              isLast={i === educationItems.length - 1}
-            />
-          ))}
-        </div>
+        {/* Featured degree carousel */}
+        <TimelineCarousel items={featuredEducation} type="degree" />
       </section>
 
       <section
