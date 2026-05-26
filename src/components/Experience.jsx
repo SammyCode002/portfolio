@@ -1,15 +1,35 @@
-import { useScrollFade } from '../hooks/useScrollFade'
+import useScrollReveal from '../hooks/useScrollReveal'
 
 const timeline = [
   {
+    type: 'fellowship',
+    title: 'NASA ACRES Research Fellow',
+    org: 'NASA ACRES',
+    period: 'May 2026 - Present',
+    location: 'Maui County, HI · Hybrid',
+    description: 'Lead fellow mapping wildfire and flood risk in Maui County using satellite remote sensing and AI. Funded by Maui Strong Fellowship in collaboration with NASA ACRES at Arizona State University.',
+    tags: ['NASA', 'Remote Sensing', 'AI', 'GIS', 'Wildfire', 'Flood Risk'],
+    accent: '#F4914A',
+  },
+  {
     type: 'work',
-    title: 'IT Specialist',
+    title: 'STEM Achievers Instructor',
+    org: 'NACCE',
+    period: 'Mar 2026 - Present',
+    location: 'Kahului, HI · On-site',
+    description: 'Teaching a free two-week summer STEM program for Maui middle schoolers at University of Hawaii Maui College, powered by NACCE. Program curriculum covers AI, robotics, 3D printing, and coding. Part of a national initiative to bring hands-on technology education to underserved youth communities.',
+    tags: ['STEM', 'AI & Robotics', '3D Printing', 'Coding', 'NACCE'],
+    accent: '#E8622A',
+  },
+  {
+    type: 'work',
+    title: 'Data Processing User Support Technician II',
     org: 'Hawaiʻi State Department of Education',
     period: 'Jan 2026 - Present',
     location: 'Pukalani, HI · On-site',
     description: 'IT support and mobile device management for school district staff using Jamf and MDM solutions. Manages endpoint security using SentinelOne EDR, including threat detection, incident response, and remediation of suspicious activity on student and staff accounts. Administers Chromebook fleet via Google Workspace Admin Console including OU configuration, kiosk app deployment, policy management, and software updates across 100+ managed devices.',
-    tags: ['MDM', 'Jamf', 'SentinelOne EDR', 'Google Workspace', 'Chromebook', 'IT Support'],
-    accent: '#6bcce8',
+    tags: ['MDM', 'Jamf', 'SentinelOne EDR', 'Google Workspace', 'IT Support'],
+    accent: '#E8622A',
   },
   {
     type: 'education',
@@ -19,7 +39,35 @@ const timeline = [
     location: 'Remote',
     description: 'Bachelor of Applied Science in Computer Science with a Cybersecurity focus.',
     tags: ['Cybersecurity', 'Computer Science'],
-    accent: '#6bb8e8',
+    accent: '#F4914A',
+  },
+  {
+    type: 'work',
+    title: 'Verizon Innovative Learning Instructor',
+    org: 'Verizon Innovative Learning',
+    period: 'Jun 2024 - Jan 2026',
+    location: 'University of Hawaii Maui College · On-site',
+    description: 'Lead STEM instructor for 150+ middle school students across Maui, covering AI/Robotics, 3D Printing, Coding, and AR/VR. Integrated Hawaiian cultural practices with technology education. Featured in Hawaii Public Radio and Maui News.',
+    tags: ['STEM', 'Robotics', '3D Printing', 'AR/VR', 'Micro:bit'],
+    accent: '#E8622A',
+    newsLinks: [
+      { label: 'Maui News', url: 'https://www.mauinews.com/news/local-news/2025/07/students-approve-as-summer-stem-program-doubles-in-size/' },
+      { label: 'Hawaii Public Radio', url: 'https://www.hawaiipublicradio.org/local-news/2025-07-18/maui-students-explore-community-problems-tech-3d-printers-coding-ai' },
+    ],
+  },
+  {
+    type: 'internship',
+    title: 'Maui Fire Research Analyst',
+    org: 'University of Hawaiʻi at Manoa',
+    period: 'Oct 2023 - Oct 2025',
+    location: 'Maui County, HI',
+    description: "Named contributor on NSF RAPID grant research (Awards #2347372, #2345255, #2345256, #2345257) briefed to Senator Mazie Hirono's office (November 2023). Collaborated with the University at Buffalo (Prof. Negar Elhami-Khorasani) to validate the SWUIFT fire spread model against documented Lahaina fire progression using NCAR high-resolution wind simulations. Contributed to geospatial modeling with ArcGIS Pro and HPC clusters, community outreach, and image/video data collection for wildfire impact assessment and community resilience research.",
+    tags: ['ArcGIS Pro', 'HPC', 'Python', 'NSF RAPID', 'Geospatial Analysis'],
+    accent: '#F4914A',
+    newsLinks: [
+      { label: 'Live Research Site', url: 'https://maui-fire.ikewai.org/' },
+      { label: 'In the News', url: 'https://www.mauinews.com/news/local-news/2024/08/maui-recovers-uh-maui-students-turn-tragedy-into-a-community-building-opportunity/' },
+    ],
   },
   {
     type: 'education',
@@ -27,35 +75,11 @@ const timeline = [
     org: 'University of Wisconsin-Stevens Point',
     period: 'May 2025',
     location: 'Wisconsin',
-    description: 'Completed intensive 2.5-week GIS conservation program combining hands-on fieldwork with technical mapping. Projects included trail restoration at Schmeeckle Reserve, shoreline restoration (planted 90+ native plants), water quality testing, and community mapping with local stakeholders through the Connected Communities Initiative (Maui-Wisconsin).',
-    tags: ['GIS', 'Conservation', 'Cartographic Analysis', 'Web Mapping', 'Environmental Education'],
-    accent: '#6bb8e8',
+    description: 'Intensive 2.5-week GIS conservation program combining hands-on fieldwork with technical mapping. Projects included trail restoration, shoreline restoration (planted 90+ native plants), water quality testing, and community mapping through the Connected Communities Initiative.',
+    tags: ['GIS', 'Conservation', 'Cartographic Analysis', 'Web Mapping'],
+    accent: '#F4914A',
     newsLinks: [
-      { label: 'View Projects on GitHub', url: 'https://github.com/SammyCode002/gis-conservation-wisconsin' },
-    ],
-  },
-  {
-    type: 'work',
-    title: 'STEM Achievers Instructor',
-    org: 'NACCE / University of Hawaiʻi Maui College',
-    period: 'Jul 2026',
-    location: 'Kahului, HI · On-site',
-    description: 'Teaching free summer STEM program for Maui middle schoolers at UHMC. Program covers AI, robotics, 3D printing, and coding over a two-week intensive camp. Part of the national STEM Achievers initiative powered by NACCE.',
-    tags: ['STEM', 'AI & Robotics', '3D Printing', 'Coding', 'NACCE'],
-    accent: '#3aa9d4',
-  },
-  {
-    type: 'work',
-    title: 'Verizon Innovative Learning Instructor',
-    org: 'Verizon Innovative Learning',
-    period: 'Jun 2024 - Jan 2026',
-    location: 'Maui County, HI · On-site',
-    description: 'Leading STEM program serving 150+ middle school students across Maui in four tech tracks: AI/Robotics, 3D Printing, Coding, and AR/VR. Integrating Hawaiian cultural practices with technology education.',
-    tags: ['STEM', 'Robotics', '3D Printing', 'AR/VR', 'Micro:bit'],
-    accent: '#b6e3f4',
-    newsLinks: [
-      { label: 'Maui News', url: 'https://www.mauinews.com/news/local-news/2025/07/students-approve-as-summer-stem-program-doubles-in-size/' },
-      { label: 'Hawaii Public Radio', url: 'https://www.hawaiipublicradio.org/local-news/2025-07-18/maui-students-explore-community-problems-tech-3d-printers-coding-ai' },
+      { label: 'View on GitHub', url: 'https://github.com/SammyCode002/gis-conservation-wisconsin' },
     ],
   },
   {
@@ -64,29 +88,19 @@ const timeline = [
     org: 'Hawaii Data Science Institute',
     period: 'May 2024 - Jun 2024',
     location: 'Hawaii · Remote',
-    description: 'Completed the CITRUS (CyberInfrastructure TRaining for Undergraduates in Summer) program at the Hawaii Data Science Institute, an NSF-funded REU-style research experience. Worked with HPC systems and climate datasets across a four-week curriculum covering data cleaning, analysis, visualization, and research communication. Culminated in a research showcase presentation.',
+    description: 'Completed the CITRUS (CyberInfrastructure TRaining for Undergraduates in Summer) program at the Hawaii Data Science Institute, an NSF-funded REU-style research experience focused on climate science and data infrastructure. Worked with HPC systems and climate datasets, building hands-on skills in data science, analytics, and visualization. Culminated in a research showcase presentation.',
     tags: ['Data Science', 'HPC', 'Climate Data', 'Visualization'],
-    accent: '#6bb8e8',
-  },
-  {
-    type: 'work',
-    title: 'STEM Squared Mentor',
-    org: 'University of Hawaiʻi at Manoa',
-    period: 'Mar 2024 - Jan 2026',
-    location: 'Hybrid',
-    description: 'Implementing trauma-informed STEM education for post-wildfire community recovery. Conducting weekly robotics, mathematics, and technology lessons at Ka Hale A Ke Ola shelter. Contributing to NSF RAPID grant research on community resilience.',
-    tags: ['STEM', 'NSF RAPID', 'Trauma-Informed Education', 'Robotics'],
-    accent: '#6bcce8',
+    accent: '#F4914A',
   },
   {
     type: 'internship',
     title: 'Cyberinfrastructure REU',
-    org: 'University of Hawaiʻi System',
+    org: "University of Hawaiʻi System",
     period: 'Jan 2024 - May 2024',
     location: 'Remote',
-    description: 'Contributed to CC* Data Storage KoaStore HPC project. Developed on-demand applications including MATLAB, TensorBoard, and Code-Server for the UH Koa HPC cluster.',
-    tags: ['HPC', 'MATLAB', 'Bash', 'Research Infrastructure'],
-    accent: '#6bb8e8',
+    description: "REU researcher on the CC* KoaStore project, a high-performance research storage system at UH. Built on-demand applications (MATLAB, TensorBoard, Code-Server) and ran performance benchmarks to optimize the university's computing infrastructure.",
+    tags: ['HPC', 'Research', 'On-Demand Apps', 'Infrastructure'],
+    accent: '#F4914A',
   },
   {
     type: 'internship',
@@ -94,29 +108,13 @@ const timeline = [
     org: 'Oceanit',
     period: 'Nov 2023 - May 2024',
     location: 'Paia, HI · Hybrid',
-    description: 'Led Climate Change Toolkit project protecting the historic Paia Mantokuji Temple from coastal erosion. Conducted environmental monitoring using MATLAB, Python, automated data collection systems, and ReoLink monitoring system cameras. Earned Hawaii State Senate recognition for environmental leadership.',
+    description: "Worked on Oceanit's Climate Change Toolkit project protecting the historic Paia Mantokuji Temple from coastal erosion. Built automated monitoring and data collection systems using MATLAB, Python, drogue systems, and ReoLink cameras. Earned official Senate recognition for the work.",
     tags: ['Python', 'MATLAB', 'ReoLink Cameras', 'Coastal Conservation'],
-    accent: '#b6e3f4',
+    accent: '#F4914A',
     newsLinks: [
+      { label: 'View StoryMap', url: 'https://arcg.is/0iifCz' },
       { label: 'Oceanit Blog', url: 'https://oceanit.com/how-students-powered-mauis-coastal-community-climate-change-toolkit-program/' },
       { label: 'Civil Beat', url: 'https://www.civilbeat.org/2024/08/this-buddhist-temple-is-collapsing-into-the-sea-off-maui/' },
-      { label: 'Maui Now', url: 'https://mauinow.com/2024/07/10/sea-level-rise-resilience-event-at-mantokuji-temple-in-pa%ca%bbia-july-13/' },
-    ],
-  },
-  {
-    type: 'work',
-    title: 'Maui Fire Research Analyst',
-    org: 'University of Hawaiʻi at Manoa',
-    period: 'Oct 2023 - Jan 2026',
-    location: 'Maui County, HI',
-    description: 'Named contributor on NSF RAPID grant briefed to Senator Mazie Hirono\'s office (Nov 2023). Collaborated with University at Buffalo (Prof. Negar Elhami-Khorasani) to validate the SWUIFT fire spread model against documented Lahaina fire progression using NCAR high-resolution wind simulations. Contributed to geospatial modeling with ArcGIS Pro and HPC, community outreach, and image/video data collection.',
-    tags: ['ArcGIS Pro', 'HPC', 'Python', 'NSF RAPID', 'AI', 'Geospatial Analysis'],
-    accent: '#6bb8e8',
-    newsLinks: [
-      { label: 'Live Research Site', url: 'https://maui-fire.ikewai.org/' },
-      { label: 'NSF RAPID (Named Contributor)', url: '/nsf-rapid/slide_13.png' },
-      { label: 'Team Photo', url: '/nsf-rapid/slide_10.png' },
-      { label: 'In the News', url: 'https://www.mauinews.com/news/local-news/2024/08/maui-recovers-uh-maui-students-turn-tragedy-into-a-community-building-opportunity/' },
     ],
   },
   {
@@ -126,8 +124,8 @@ const timeline = [
     period: 'Aug 2023 - May 2025',
     location: 'Kahului, HI',
     description: "Natural Science, Information and Computer Sciences. GPA 3.85. Dean's List, STEM Academic Excellence Recognition.",
-    tags: ["Dean's List", 'GPA 3.85', 'STEM Excellence', 'Computer Science'],
-    accent: '#6bcce8',
+    tags: ["Dean's List", 'GPA 3.85', 'STEM Excellence'],
+    accent: '#E8622A',
   },
 ]
 
@@ -138,7 +136,7 @@ const certifications = [
     date: 'Jul 2023',
     credentialId: 'P6Y5Z4PDPHZR',
     url: 'https://www.credly.com/earner/earned/badge/24a00bfa-5457-4e3a-a5db-e0cc5f917023',
-    accent: '#6bcce8',
+    accent: '#E8622A',
   },
   {
     title: 'Certified in Cybersecurity (CC)',
@@ -146,7 +144,7 @@ const certifications = [
     date: 'Jul 2023',
     credentialId: 'EFP2GTJKV2TD',
     url: 'https://www.coursera.org/account/accomplishments/specialization/certificate/EFP2GTJKV2TD',
-    accent: '#6bb8e8',
+    accent: '#F4914A',
   },
   {
     title: 'Cybersecurity Operations Fundamentals',
@@ -154,115 +152,95 @@ const certifications = [
     date: 'Aug 2023',
     credentialId: 'TAL46GVTNNWA',
     url: 'https://www.coursera.org/account/accomplishments/specialization/certificate/TAL46GVTNNWA',
-    accent: '#3aa9d4',
-  },
-  {
-    title: 'Introduction to Cyber Attacks',
-    issuer: 'NYU Tandon School of Engineering',
-    date: 'Aug 2023',
-    credentialId: 'HEQFVTWZ8EBR',
-    url: 'https://www.coursera.org/account/accomplishments/certificate/HEQFVTWZ8EBR',
-    accent: '#b6e3f4',
+    accent: '#F4914A',
   },
 ]
-
-function TimelineIcon({ type, accent }) {
-  if (type === 'education') {
-    return (
-      <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" style={{ color: accent }}>
-        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-      </svg>
-    )
-  }
-  if (type === 'internship') {
-    return (
-      <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" style={{ color: accent }}>
-        <path fillRule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z" clipRule="evenodd" />
-        <path d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z" />
-      </svg>
-    )
-  }
-  return (
-    <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" style={{ color: accent }}>
-      <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
-      <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
-    </svg>
-  )
-}
 
 function typeLabel(type) {
   if (type === 'education') return 'Education'
   if (type === 'internship') return 'Internship'
+  if (type === 'fellowship') return 'Fellowship'
   return 'Work'
 }
 
-function TimelineItem({ item, index }) {
-  const itemRef = useScrollFade(index * 60)
+function TimelineItem({ item, index, isLast }) {
+  const reveal = useScrollReveal(index * 35)
+
   return (
-    <div ref={itemRef} className="relative flex gap-8 pb-10 last:pb-0">
-      {/* Icon dot */}
-      <div className="relative z-10 flex-shrink-0 flex flex-col items-center">
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-          style={{
-            background: `${item.accent}12`,
-            border: `1px solid ${item.accent}30`,
-          }}
-        >
-          <TimelineIcon type={item.type} accent={item.accent} />
-        </div>
+    <div ref={reveal.ref} style={{ ...reveal.style, display: 'flex', gap: '16px', paddingBottom: '20px' }}>
+      {/* Dot */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+        <div style={{
+          width: '10px', height: '10px', borderRadius: '50%', marginTop: '5px',
+          background: item.accent, boxShadow: `0 0 0 3px ${item.accent}22`,
+          flexShrink: 0,
+        }} />
+        {!isLast && (
+          <div style={{ width: '1px', flex: 1, background: 'var(--border)', marginTop: '6px' }} />
+        )}
       </div>
 
       {/* Card */}
-      <div className="glass-card rounded-2xl p-6 flex-1 min-w-0">
-        <div className="flex items-start justify-between gap-4 mb-1 flex-wrap">
-          <div>
-            <span
-              className="text-xs font-medium px-2 py-0.5 rounded uppercase tracking-wide"
-              style={{ background: `${item.accent}12`, color: item.accent }}
-            >
-              {typeLabel(item.type)}
-            </span>
-          </div>
-          <span className="text-[#6a8aa8] text-xs font-medium">{item.period}</span>
+      <div style={{
+        flex: 1, minWidth: 0, paddingBottom: '4px',
+        background: 'var(--bg-card)', border: '1px solid var(--border)',
+        borderRadius: '12px', padding: '14px 16px', marginBottom: '4px',
+        transition: 'border-color 0.2s',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px', gap: '8px' }}>
+          <span style={{
+            fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.07em',
+            padding: '2px 7px', borderRadius: '999px',
+            background: `${item.accent}18`, color: item.accent,
+          }}>
+            {typeLabel(item.type)}
+          </span>
+          <span style={{ fontSize: '12px', color: 'var(--text-muted)', flexShrink: 0 }}>{item.period}</span>
         </div>
 
-        <h3 className="text-[#eaf6fb] font-semibold text-lg mt-2 mb-0.5">{item.title}</h3>
-        <div className="flex items-center gap-2 mb-3">
-          <span className="font-medium text-sm" style={{ color: item.accent }}>{item.org}</span>
-          <span className="text-[#6a8aa8]">·</span>
-          <span className="text-[#6a8aa8] text-sm">{item.location}</span>
+        <h3 style={{ fontSize: '16px', fontWeight: '700', color: 'var(--text)', margin: '0 0 2px' }}>
+          {item.title}
+        </h3>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+          <span style={{ fontSize: '13px', fontWeight: '500', color: item.accent }}>{item.org}</span>
+          <span style={{ color: 'var(--border-bright)' }}>&middot;</span>
+          <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{item.location}</span>
         </div>
 
-        <p className="text-[#9ebed4] text-sm leading-relaxed mb-4">{item.description}</p>
+        <p style={{ fontSize: '13.5px', lineHeight: '1.65', color: 'var(--text-secondary)', margin: '0 0 10px' }}>
+          {item.description}
+        </p>
 
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {item.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-0.5 rounded text-xs bg-[#0e2548] border border-[#1d3458] text-[#6a8aa8]"
-            >
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: item.newsLinks ? '10px' : 0 }}>
+          {item.tags.map(tag => (
+            <span key={tag} style={{
+              padding: '2px 7px', borderRadius: '999px',
+              background: 'var(--bg-panel)', border: '1px solid var(--border)',
+              fontSize: '11px', color: 'var(--text-muted)',
+            }}>
               {tag}
             </span>
           ))}
         </div>
 
         {item.newsLinks && (
-          <div className="flex flex-wrap gap-3">
-            {item.newsLinks.map((news) => (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+            {item.newsLinks.map(news => (
               <a
                 key={news.url}
                 href={news.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-medium no-underline transition-colors"
-                style={{ color: item.accent }}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  fontSize: '12px', fontWeight: '500', color: item.accent,
+                  textDecoration: 'none', transition: 'opacity 0.15s',
+                }}
+                onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
               >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
                 {news.label}
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
@@ -275,86 +253,115 @@ function TimelineItem({ item, index }) {
 }
 
 export default function Experience() {
-  const headerRef = useScrollFade(0)
+  const experienceHeaderReveal = useScrollReveal(0)
+  const educationHeaderReveal = useScrollReveal(0)
+  const certsReveal = useScrollReveal(0)
+
+  const workItems = timeline.filter(item => item.type !== 'education')
+  const educationItems = timeline.filter(item => item.type === 'education')
 
   return (
-    <section
-      id="experience"
-      className="py-24 px-6 relative overflow-hidden"
-      style={{
-        background: 'radial-gradient(ellipse at 15% 40%, rgba(6,182,212,0.04) 0%, transparent 55%), #0a1525',
-      }}
-    >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1d3458] to-transparent" />
-      {/* Ambient blobs */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 rounded-full opacity-[0.03] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #6bcce8, transparent)' }} />
-      <div className="absolute bottom-1/4 left-0 w-72 h-72 rounded-full opacity-[0.025] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #6bb8e8, transparent)' }} />
-
-      <div className="max-w-3xl mx-auto">
-        {/* Header */}
-        <div ref={headerRef} className="mb-16">
-          <p className="text-[#6bcce8] text-sm font-medium tracking-widest uppercase mb-3">Background</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#eaf6fb]">
-            Experience &{' '}
-            <span className="gradient-text">Education</span>
+    <>
+      <section id="experience" className="panel-card" style={{ padding: '24px', scrollMarginTop: '72px' }}>
+        <div ref={experienceHeaderReveal.ref} style={{ ...experienceHeaderReveal.style, marginBottom: '24px' }}>
+          <p className="section-header" style={{ marginBottom: '4px' }}>Background</p>
+          <h2 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text)', margin: 0 }}>
+            Experience
           </h2>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          <div className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-[#6bcce8] via-[#1d3458] to-transparent" />
-          <div className="flex flex-col gap-0">
-            {timeline.map((item, i) => (
-              <TimelineItem key={i} item={item} index={i} />
-            ))}
-          </div>
+        <div>
+          {workItems.map((item, i) => (
+            <TimelineItem
+              key={`work-${i}`}
+              item={item}
+              index={i}
+              isLast={i === workItems.length - 1}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section id="education" className="panel-card" style={{ padding: '24px', scrollMarginTop: '72px' }}>
+        <div ref={educationHeaderReveal.ref} style={{ ...educationHeaderReveal.style, marginBottom: '24px' }}>
+          <p className="section-header" style={{ marginBottom: '4px' }}>Learning</p>
+          <h2 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text)', margin: 0 }}>
+            Education
+          </h2>
         </div>
 
-        {/* Certifications */}
-        <div className="mt-20">
-          <p className="text-[#6bcce8] text-sm font-medium tracking-widest uppercase mb-3">Credentials</p>
-          <h3 className="text-3xl md:text-4xl font-bold text-[#eaf6fb] mb-8">
-            <span className="gradient-text">Certifications</span>
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {certifications.map((cert) => (
-              <a
-                key={cert.credentialId}
-                href={cert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-card rounded-xl p-5 flex flex-col gap-2 no-underline transition-all hover:-translate-y-0.5 group"
-                style={{ borderTop: `1px solid ${cert.accent}33` }}
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <span
-                    className="text-xs font-semibold uppercase tracking-wide"
-                    style={{ color: cert.accent }}
-                  >
-                    {cert.issuer}
-                  </span>
-                  <span className="text-[#6a8aa8] text-xs font-medium">{cert.date}</span>
-                </div>
-                <h4 className="text-[#eaf6fb] font-semibold text-base leading-snug">{cert.title}</h4>
-                <div className="flex items-center justify-between gap-3 mt-auto pt-1">
-                  <p className="text-[#6a8aa8] text-xs font-mono">ID: {cert.credentialId}</p>
-                  <span
-                    className="inline-flex items-center gap-1 text-xs font-medium transition-colors"
-                    style={{ color: cert.accent }}
-                  >
-                    View Credential
-                    <svg className="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                    </svg>
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
+        <div>
+          {educationItems.map((item, i) => (
+            <TimelineItem
+              key={`edu-${i}`}
+              item={item}
+              index={i}
+              isLast={i === educationItems.length - 1}
+            />
+          ))}
         </div>
+      </section>
+
+      <section
+        id="certifications"
+        ref={certsReveal.ref}
+        className="panel-card"
+        style={{ ...certsReveal.style, padding: '24px', scrollMarginTop: '72px' }}
+      >
+        <p className="section-header" style={{ marginBottom: '12px' }}>Certifications</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '10px' }}>
+          {certifications.map((cert, i) => (
+            <CertCard key={cert.credentialId} cert={cert} index={i} />
+          ))}
+        </div>
+      </section>
+    </>
+  )
+}
+
+function CertCard({ cert, index }) {
+  const reveal = useScrollReveal(index * 50)
+  return (
+    <div ref={reveal.ref} style={reveal.style}>
+    <a
+      href={cert.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'block', padding: '14px 16px', borderRadius: '12px',
+        background: 'var(--bg-card)', border: '1px solid var(--border)',
+        textDecoration: 'none',
+        borderTop: `2px solid ${cert.accent}`,
+        transition: 'border-color 0.2s ease, transform 0.2s ease',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = cert.accent
+        e.currentTarget.style.transform = 'translateY(-3px)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = 'var(--border)'
+        e.currentTarget.style.borderTopColor = cert.accent
+        e.currentTarget.style.transform = 'translateY(0)'
+      }}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+        <span style={{ fontSize: '10px', fontWeight: '700', color: cert.accent, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          {cert.issuer}
+        </span>
+        <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{cert.date}</span>
       </div>
-    </section>
+      <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text)', margin: '0 0 6px', lineHeight: '1.4' }}>
+        {cert.title}
+      </p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontSize: '10px', color: 'var(--text-muted)', fontFamily: 'monospace' }}>
+          ID: {cert.credentialId}
+        </span>
+        <span style={{ fontSize: '10px', fontWeight: '500', color: cert.accent }}>
+          View &rarr;
+        </span>
+      </div>
+    </a>
+    </div>
   )
 }

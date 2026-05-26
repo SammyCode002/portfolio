@@ -1,59 +1,114 @@
-# Sam Dameg's Portfolio
+<p align="center">
+  <img src="public/sam-favicon.svg" width="64" alt="SD logo"/>
+</p>
+<h1 align="center">
+  samdameg.com - v3
+</h1>
+<p align="center">
+  The third iteration of <a href="https://samdameg.com" target="_blank">samdameg.com</a>, a lofi anime aesthetic split-panel portfolio built with Vite and React 19, featuring an interactive character, scroll-triggered animations, and light/dark theme.
+</p>
+<p align="center">
+  <img src="public/sam-room-bg.jpg" width="100%" alt="samdameg-v3-preview"/>
+</p>
 
-Personal developer portfolio for Sam Dameg. Built with React 19, Vite, and Tailwind CSS v4.
+## about
 
-**Live site:** https://portfolio-hazel-eight-1eo8p12f3a.vercel.app
+Personal portfolio for Sam Dameg, IT Specialist at the Hawaii State Department of Education and Computer Science Cybersecurity student at Oregon State University. Based in Maui, Hawaii.
 
-## About
+The site uses a fixed left panel with stacked cards (profile, featured work, footer) and a scrollable right panel with sticky navigation. The character on the contact panel is interactive, opening suggested questions when clicked. Each section uses scroll-reveal animations for a polished feel.
 
-Single page portfolio with a page swap navigation model (clicking a nav link replaces the active view, no scrolling between sections). Sections:
+## tech stack
 
-- **Hero** with an animated canvas globe and orbiting satellites
-- **About Me** with a flat tech stack and short bio
-- **Projects** featuring recent work (STEM Achievers, Maui Fire Research, Climate Change at Mantokuji, NASA Harvest, Coastal Erosion Monitor)
-- **On the Horizon** for upcoming events and study abroad (SANS San Francisco 2026, Seoul and Tokyo Study Abroad)
-- **Experience** timeline of work, education, internships, and research
-- **Contact** form and links
+- **Vite 7** + **React 19**
+- **Tailwind CSS v4** with custom CSS variables for theming
+- **CSS-only animations** (no animation library)
+- **IntersectionObserver** for scroll reveals
+- **Phaser 3** sub-page (Cyberrunner game at `/cyberrunner.html`)
+- Deployed on **Vercel**
 
-## Notable Features
+## set-up
 
-- **Boot loading screen** with hexagonal auth scanner, scrambling SHA256 fingerprint, ED25519 / X25519 / TLSv1.3 / AES-256-GCM cipher line, scanning beam, and live timecode. Click anywhere or press space, enter, or escape to skip.
-- **Live UTC clock** in the navbar updates every second
-- **Ice blue palette** with subtle scanline texture and glassmorphism cards
-- **Page swap navigation** powered by a small NavContext rather than scroll anchors
-- **Animated canvas globe** with orbiting satellites in the hero
-- **Typewriter heading**, fade in animations, and cyan to ice gradient text
+1. Install the dependencies
 
-## Tech Stack
+   ```sh
+   npm install
+   ```
 
-- React 19
-- Vite 7
-- Tailwind CSS v4
-- Canvas API for the globe animation
-- Custom CSS keyframes for fade, pulse, and float
+2. Start the development server
 
-## Run Locally
+   ```sh
+   npm run dev
+   ```
 
-```bash
-git clone https://github.com/SammyCode002/portfolio.git
-cd portfolio
-npm install
-npm run dev
+## build and run for production
+
+1. Generate a full static production build
+
+   ```sh
+   npm run build
+   ```
+
+2. Preview the production build locally
+
+   ```sh
+   npm run preview
+   ```
+
+## features
+
+- Split-panel layout with a fixed left side and scrollable right side
+- Card-stack visual system with staggered slide-in animations
+- Light and dark theme toggle, persisted to localStorage
+- Interactive character with click-to-reveal suggested questions in the contact panel
+- AI-style prompt input that opens an email draft on submit
+- Sticky right-panel navbar with scroll-spy tracking across Projects, Experience, Education, and Play
+- Hi, I'm Sam typewriter intro animation
+- Equal-height project cards with primary and secondary link buttons
+- Scroll-triggered fade and lift reveals on every section
+- Cyberrunner Phaser game as a separate page
+- Lofi anime aesthetic with custom character art and background
+- Mobile responsive layout
+
+## color codes
+
+| Color           | Hex                                                                |
+| --------------- | ------------------------------------------------------------------ |
+| Accent Orange   | ![#E8622A](https://placehold.co/15/E8622A/E8622A.png) `#E8622A`    |
+| Accent Hover    | ![#d4541f](https://placehold.co/15/d4541f/d4541f.png) `#d4541f`    |
+| Medium Orange   | ![#F4914A](https://placehold.co/15/F4914A/F4914A.png) `#F4914A`    |
+| Light Peach     | ![#F4A261](https://placehold.co/15/F4A261/F4A261.png) `#F4A261`    |
+| Light BG        | ![#ffffff](https://placehold.co/15/ffffff/ffffff.png) `#ffffff`    |
+| Light Panel     | ![#f5f5f5](https://placehold.co/15/f5f5f5/f5f5f5.png) `#f5f5f5`    |
+| Light Text      | ![#111111](https://placehold.co/15/111111/111111.png) `#111111`    |
+| Dark BG         | ![#0e0e0e](https://placehold.co/15/0e0e0e/0e0e0e.png) `#0e0e0e`    |
+| Dark Panel      | ![#141414](https://placehold.co/15/141414/141414.png) `#141414`    |
+| Dark Text       | ![#f0f0f0](https://placehold.co/15/f0f0f0/f0f0f0.png) `#f0f0f0`    |
+
+## project structure
+
+```
+portfolio/
+├── public/                      # Static assets (images, favicon, character art)
+├── src/
+│   ├── components/
+│   │   ├── LeftPanel.jsx        # Fixed left panel (profile, featured, contact)
+│   │   ├── RightNavbar.jsx      # Sticky right-panel navbar
+│   │   ├── Intro.jsx            # Hi, I'm Sam typewriter
+│   │   ├── Projects.jsx         # Project cards grid
+│   │   ├── Experience.jsx       # Experience, Education, Certifications
+│   │   └── GlobalClock.jsx      # UTC clock in toolbar
+│   ├── context/
+│   │   └── ThemeContext.jsx     # Light / dark theme provider
+│   ├── hooks/
+│   │   └── useScrollReveal.js   # Shared scroll-reveal hook
+│   ├── cyberrunner/             # Phaser game sub-page
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css                # CSS variables, theme tokens, animations
+├── cyberrunner.html             # Separate entry for the Phaser game
+└── index.html
 ```
 
-The dev server runs at http://localhost:5173.
+## license
 
-## Build for Production
-
-```bash
-npm run build
-npm run preview
-```
-
-## Deployment
-
-Deployed automatically to Vercel on every push to `main`.
-
-## License
-
-Personal project. All rights reserved.
+MIT
