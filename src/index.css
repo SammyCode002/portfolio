@@ -119,10 +119,85 @@ body {
 }
 
 @media (max-width: 768px) {
-  .split-layout { flex-direction: column; overflow: visible; height: auto; }
-  .left-panel { width: 100%; min-width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
-  .right-panel { height: auto; overflow-y: visible; }
   body { overflow: auto; }
+  .split-layout {
+    flex-direction: column;
+    overflow: visible;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Lofi background covers full mobile viewport top, behind the left panel */
+  .split-layout::before {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    background-position: center top;
+  }
+
+  /* Left panel becomes natural-height stack */
+  .left-panel {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    overflow: visible;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 12px;
+    gap: 10px;
+  }
+
+  /* Right panel becomes natural-height */
+  .right-panel {
+    height: auto;
+    overflow-y: visible;
+    padding: 12px;
+    gap: 10px;
+    background-color: var(--bg-panel);
+  }
+
+  /* Sticky navbar inside right panel re-anchored to viewport */
+  .right-panel > nav.panel-card {
+    position: sticky;
+    top: 8px;
+  }
+
+  /* Profile card image: smaller on mobile */
+  .left-panel .panel-card img[alt="Sam Dameg"] {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 12px;
+  }
+
+  /* PromptCard character — much smaller on mobile so it doesn't dominate */
+  .character-btn {
+    width: 130px !important;
+    bottom: 80px !important;
+    max-height: calc(100% - 100px) !important;
+  }
+
+  /* Tap targets — bump small icon buttons closer to 44px standard */
+  .panel-toolbar .toggle-pill button { padding: 6px 14px; }
+  .right-panel > nav.panel-card { padding: 0; }
+
+  /* Intro heading scales naturally via clamp(), but force a tighter min */
+  #intro h1 { font-size: clamp(36px, 10vw, 56px) !important; }
+
+  /* Project cards: single column with comfortable spacing */
+  #projects > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Certifications: single column on mobile */
+  #certifications div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Animation stagger gentler on mobile (cards already small + stacked) */
+  .left-panel > *:nth-child(1) { animation-delay: 0s; }
+  .left-panel > *:nth-child(2) { animation-delay: 0.08s; }
+  .left-panel > *:nth-child(3) { animation-delay: 0.16s; }
+  .left-panel > *:nth-child(4) { animation-delay: 0.24s; }
 }
 
 /* ─── Scrollbar ───────────────────────────────────── */
