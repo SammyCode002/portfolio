@@ -2,10 +2,10 @@
   <img src="public/sam-favicon.svg" width="64" alt="SD logo"/>
 </p>
 <h1 align="center">
-  samdameg.com - v3
+  Sam Dameg Portfolio - v3
 </h1>
 <p align="center">
-  The third iteration of <a href="https://samdameg.com" target="_blank">samdameg.com</a>, a lofi anime aesthetic split-panel portfolio built with Vite and React 19, featuring an interactive character, scroll-triggered animations, and light/dark theme.
+  The third iteration of my personal portfolio. <a href="https://portfolio-hazel-eight-1eo8p12f3a.vercel.app/" target="_blank">Live site</a>. A lofi anime aesthetic split-panel portfolio built with Vite and React 19, featuring an interactive character, scroll-triggered animations, and light/dark theme.
 </p>
 <p align="center">
   <img src="public/sam-room-bg.jpg" width="100%" alt="samdameg-v3-preview"/>
