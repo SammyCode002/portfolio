@@ -9,7 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        cyberrunner: resolve(__dirname, 'cyberrunner.html'),
+        // cyberrunner: resolve(__dirname, 'cyberrunner.html'), // disabled until ready
       },
     },
   },

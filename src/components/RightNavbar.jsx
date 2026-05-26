@@ -37,7 +37,6 @@ const NAV_LINK_DEFS = [
   { id: 'press', label: 'press' },
   { id: 'experience', label: 'experience' },
   { id: 'education', label: 'education' },
-  { id: 'play', label: 'play', external: '/cyberrunner.html' },
 ]
 
 export default function RightNavbar() {
